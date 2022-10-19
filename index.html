@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./src/js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/output.css">
+
+    <title>Calculator</title>
+</head>
+
+<body class="font-sans bg-t1mainBG flex justify-center items-center h-[100vh]">
+    <main class="bg-t1keyBGT flex flex-col justify-center items-center w-[23%] h-[47%]">
+        <topbar class="w-full h-2/12 flex justify-between items-center bg-t1keySD1">
+            <text-top class="h-full">
+                calc
+            </text-top>
+            
+            <toggle class="w-10 space-x-1 bg-t1toggleBG rounded-full flex justify-center items-center">
+                <input class="button w-[0.60rem] accent-t1keyBGT border-0 outline-none" type="radio" name="toggle" id="one" />
+                <input class="button w-[0.60rem]" type="radio" name="toggle" id="two" />
+                <input class="button w-[0.60rem]" type="radio" name="toggle" id="three" />
+            </toggle>
+        </topbar>
+        <screen>
+            Screen
+        </screen>
+        <keypad>
+            Keypad    
+        </keypad>
+    </main>
+</body>
+</html>
