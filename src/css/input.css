@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button{
+    appearance: none;
+    border-radius: 50%;
+    opacity: 1;
+}
