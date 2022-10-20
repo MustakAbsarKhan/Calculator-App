@@ -6,4 +6,5 @@
     appearance: none;
     border-radius: 50%;
     opacity: 1;
+    cursor: pointer;
 }

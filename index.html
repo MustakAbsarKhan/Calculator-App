@@ -14,24 +14,30 @@
 </head>
 
 <body class="font-sans bg-t1mainBG flex justify-center items-center h-[100vh]">
-    <main class="bg-t1keyBGT flex flex-col justify-center items-center w-[25%] h-[60%]">
-        <topbar class="w-full h-12 px-1 flex justify-between items-end bg-t1keySD2">
-            <text-top class="font-bold text-2xl text-t1text2">
+    <main class="flex flex-col justify-center items-center w-[25%] h-[70%] min-w-fit">
+        <topbar class="w-full h-12 px-1 mb-2 justify-between flex items-end bg-t1keySD2">
+            <text-top class="font-bold text-3xl text-t1text2">
                 calc
             </text-top>
-            
-            <div class="left-unit flex flex-col h-12">
-                <numbers class="h-5 flex justify-center gap-x-4 text-t1text2">
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                </numbers>
-                <toggle class="w-fit bg-t1toggleBG rounded-full flex justify-center items-center">
-                    <input class="button n1 h-4 w-4 m-1 bg-t1text2" type="radio" name="toggle" id="one" />
-                    <input class="button n2 h-4 w-4 m-1 bg-t1keySD2" type="radio" name="toggle" id="two" />
-                    <input class="button n3 h-4 w-4 m-1 bg-t1keySD1" type="radio" name="toggle" id="three" />
-                </toggle>
-            </div>
+
+            <right class="flex h-12 items-end">
+                <text-top class="text-xs text-t1keyBG1 uppercase font-thin tracking-wider mr-6 flex h-7 items-center">
+                    Theme
+                </text-top>
+                
+                <div class="flex flex-col justify-center h-12">
+                    <numbers class="flex justify-center text-t1text2 text-sm">
+                        <p class="pr-[0.95rem] pl-[0.05rem]">1</p>
+                        <p class="pr-[0.80rem]">2</p>
+                        <p class="pr-0">3</p>
+                    </numbers>
+                    <toggle class="w-fit h-fit bg-t1toggleBG rounded-full flex justify-center">
+                        <input class="button n1 h-3 w-3 m-1 bg-t1keyBGT" type="radio" name="toggle" id="one" />
+                        <input class="button n2 h-3 w-3 m-1 bg-t1keyBGT" type="radio" name="toggle" id="two" />
+                        <input class="button n3 h-3 w-3 m-1 bg-t1keyBGT" type="radio" name="toggle" id="three" />
+                    </toggle>
+                </div>
+            </right>  
 
         </topbar>
         <screen>
