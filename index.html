@@ -15,8 +15,8 @@
 
 <body class="font-sans bg-t1mainBG flex justify-center items-center h-[100vh]">
     <main class="flex flex-col justify-center items-center w-[25%] h-[70%] min-w-fit">
-        <topbar class="w-full h-12 px-1 mb-2 justify-between flex items-end bg-t1keySD2">
-            <text-top class="font-bold text-3xl text-t1text2">
+        <topbar class="w-full h-12 px-1 mb-2 justify-between flex items-end">
+            <text-top class="font-bold text-4xl text-t1text2">
                 calc
             </text-top>
 
@@ -26,25 +26,46 @@
                 </text-top>
                 
                 <div class="flex flex-col justify-center h-12">
-                    <numbers class="flex justify-center text-t1text2 text-sm">
-                        <p class="pr-[0.95rem] pl-[0.05rem]">1</p>
-                        <p class="pr-[0.80rem]">2</p>
-                        <p class="pr-0">3</p>
+                    <numbers class="flex justify-start text-t1text2 text-sm">
+                        <p class="pr-[1.20rem] pl-2">1</p>
+                        <p class="pr-[1.10rem]">2</p>
+                        <p class="">3</p>
                     </numbers>
                     <toggle class="w-fit h-fit bg-t1toggleBG rounded-full flex justify-center">
-                        <input class="button n1 h-3 w-3 m-1 bg-t1keyBGT" type="radio" name="toggle" id="one" />
-                        <input class="button n2 h-3 w-3 m-1 bg-t1keyBGT" type="radio" name="toggle" id="two" />
-                        <input class="button n3 h-3 w-3 m-1 bg-t1keyBGT" type="radio" name="toggle" id="three" />
+                        <input class="button n1 h-4 w-4 m-1 bg-t1keyBGT" type="radio" name="toggle" id="one" />
+                        <input class="button n2 h-4 w-4 m-1 bg-t1keyBGT" type="radio" name="toggle" id="two" />
+                        <input class="button n3 h-4 w-4 m-1 bg-t1keyBGT" type="radio" name="toggle" id="three" />
                     </toggle>
                 </div>
             </right>  
 
         </topbar>
-        <screen>
-            Screen
+        <screen class="w-full my-4">
+            <input type="text" class="w-full bg-t1screenBG text-t1text2 rounded-2xl text-right p-10 text-4xl tracking-wider" value="">
         </screen>
-        <keypad>
-            Keypad    
+        <keypad class="bg-t1toggleBG rounded-2xl grid grid-cols-4 grid-rows-5 w-full h-screen pt-4 pb-6 px-5">
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="7" onclick="">
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="8" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="9" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG rounded-2xl border-b-4 border-t1keySD/90 text-3xl pt-3 text-center text-t1text2" type="button" value="DEL" onclick="">    
+
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="4" onclick="">
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="5" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="6" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="+" onclick="">  
+
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="1" onclick="">
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="2" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="3" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="-" onclick="">  
+
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="." onclick="">
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="0" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="/" onclick="">    
+            <input class="h-5/6 m-3 bg-t1keyBG1 rounded-2xl border-b-4 border-t1keySD2/95 text-4xl pt-3 text-center text-t1text1" type="button" value="x" onclick="">  
+
+            <input class="h-5/6 m-3 pt-2 bg-t1keyBG col-span-2 rounded-2xl border-b-4 border-t1keySD/90 text-3xl text-center text-t1text2" type="button" value="RESET" onclick="">
+            <input class="h-5/6 m-3 pt-2 bg-t1keyBGT col-span-2 rounded-2xl border-b-4 border-t1keySD1 text-3xl text-center text-t1text2" type="button" value="=" onclick="">
         </keypad>
     </main>
 </body>
