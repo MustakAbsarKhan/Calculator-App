@@ -12,6 +12,10 @@ module.exports = {
       fontFamily: {
         'sans': ['League Spartan', ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        'usm': {'max': '640px'},
+        // => @media (max-width: 640px) { ... }
+      },
     },
 
     colors: {
