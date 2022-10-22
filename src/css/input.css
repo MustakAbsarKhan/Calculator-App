@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{ 
+
+    .toggle{
+        @apply appearance-none rounded-[50%] cursor-pointer opacity-100 h-[60%] w-[16%]
+    };
+    
+    .button{
+        @apply m-2 usm:m-1 pt-2 bg-t1keyBG1/80 rounded-lg border-b-4 border-t1keySD2/95 text-center text-t1text1 text-3xl subpixel-antialiased active:bg-t1keyBG1/100
+    };
+
+    .big-button{
+        @apply m-2 usm:m-1 pt-2 rounded-lg border-b-4 text-center text-2xl subpixel-antialiased tracking-wide
+    };
+
+};
