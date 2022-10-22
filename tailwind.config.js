@@ -13,7 +13,7 @@ module.exports = {
         'sans': ['League Spartan', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        'usm': {'max': '640px'},
+        'usm': {'max': '281px'},
         // => @media (max-width: 640px) { ... }
       },
     },
