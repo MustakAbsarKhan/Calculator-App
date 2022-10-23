@@ -13,35 +13,35 @@
     <title>Calculator</title>
 </head>
 
-<body class="font-sans bg-t1mainBG flex justify-center items-center h-[100vh]">
+<body class="font-sans bg-t1mainBG flex justify-center items-center h-[100vh]" id="body-selector">
     <main class="flex flex-col justify-center items-center w-[25%] h-[70%] min-w-fit min-h-[535px] m-6">
         <topbar class="w-full h-[10%] px-1 my-2 flex items-center justify-center">
-            <text-top class=" w-2/6 h-full font-bold text-5xl text-t1text2 flex items-end">
+            <text-top-left class=" w-2/6 h-full font-bold text-5xl text-t1text2 flex items-end" id="text-top-left-selector">
                 calc
-            </text-top>
+            </text-top-left>
 
             <right class="flex h-full w-4/6 justify-end items-end">
-                <text-top class="h-[50%] w-1/2 flex items-center justify-end text-xs text-t1keyBG1 uppercase tracking-wider">
+                <text-top-right class="h-[50%] w-1/2 flex items-center justify-end text-xs text-t1keyBG1 uppercase tracking-wider" id="text-top-right-selector">
                     Theme
-                </text-top>
+                </text-top-right>
                 
                 <div class="h-full w-1/2 flex flex-col justify-end items-end">
-                    <numbers class="w-[60%] flex justify-around items-center text-t1text2 text-sm">
+                    <numbers class="w-[60%] flex justify-around items-center text-t1text2 text-sm" id="toggle-number-selector">
                         <p class="w-[18%] flex justify-around">1</p>
                         <p class="w-[18%] flex justify-around">2</p>
                         <p class="w-[18%] flex justify-around">3</p>
                     </numbers>
-                    <toggle class="w-[60%] h-[50%] flex justify-around items-center bg-t1toggleBG rounded-full">
-                        <input class="toggle bg-t1keySD1 active:bg-t1keyBGT" type="radio" name="toggle" id="one" />
-                        <input class="toggle bg-t1keySD1 active:bg-t1keyBGT" type="radio" name="toggle" id="two" />
-                        <input class="toggle bg-t1keySD1 active:bg-t1keyBGT" type="radio" name="toggle" id="three" />
+                    <toggle class="w-[60%] h-[50%] flex justify-around items-center bg-t1toggleBG rounded-full" id="toggle-bar-selector">
+                        <input id="tg1" class="toggle bg-t1keySD1 active:bg-t1keyBGT" type="radio" name="toggle" id="one" />
+                        <input id="tg2" class="toggle bg-t1keySD1 active:bg-t1keyBGT" type="radio" name="toggle" id="two" />
+                        <input id="tg3" class="toggle bg-t1keySD1 active:bg-t1keyBGT" type="radio" name="toggle" id="three" />
                     </toggle>
                 </div>
             </right>  
 
         </topbar>
         <screen class="w-full h-[20%] my-2">
-            <input type="text" class="w-full h-full bg-t1screenBG text-t1text2 text-4xl rounded-lg text-right p-6 tracking-wider" value="">
+            <input type="text" class="w-full h-full bg-t1screenBG text-t1text2 text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="">
         </screen>
         <keypad class="h-[70%] max-h-[550px] w-full bg-t1toggleBG rounded-lg grid grid-cols-4 grid-rows-5 p-4 usm:p-1 my-2">
             <input class="button" id="button1" type="button" value="7" onclick="">
