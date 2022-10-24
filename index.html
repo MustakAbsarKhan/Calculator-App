@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./src/js/main.js" defer></script>
+    <script src="./src/js/toggle.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
@@ -44,27 +45,27 @@
             <input type="text" class="w-full h-full bg-t1screenBG text-t1text2 text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="">
         </screen>
         <keypad id="keypad-selector" class="h-[70%] max-h-[550px] w-full bg-t1toggleBG rounded-lg grid grid-cols-4 grid-rows-5 p-4 usm:p-1 my-2">
-            <input class="button theme1-btn" type="button" value="7" onclick="">
-            <input class="button theme1-btn" type="button" value="8" onclick="">    
-            <input class="button theme1-btn" type="button" value="9" onclick="">    
-            <input class="big-button theme1-big-button" type="button" value="DEL" onclick="">    
+            <input class="button theme1-btn" type="button" value="7" onclick="calculate('7')">
+            <input class="button theme1-btn" type="button" value="8" onclick="calculate('8')">    
+            <input class="button theme1-btn" type="button" value="9" onclick="calculate('9')">    
+            <input class="big-button theme1-big-button" type="button" value="DEL" onclick="del()">    
 
-            <input class="button theme1-btn" type="button" value="4" onclick="">
-            <input class="button theme1-btn" type="button" value="5" onclick="">    
-            <input class="button theme1-btn" type="button" value="6" onclick="">    
-            <input class="button theme1-btn" type="button" value="+" onclick="">  
+            <input class="button theme1-btn" type="button" value="4" onclick="calculate('4')">
+            <input class="button theme1-btn" type="button" value="5" onclick="calculate('5')">    
+            <input class="button theme1-btn" type="button" value="6" onclick="calculate('6')">    
+            <input class="button theme1-btn" type="button" value="+" onclick="calculate('+')">  
 
-            <input class="button theme1-btn" type="button" value="1" onclick="">
-            <input class="button theme1-btn" type="button" value="2" onclick="">    
-            <input class="button theme1-btn" type="button" value="3" onclick="">    
-            <input class="button theme1-btn" type="button" value="-" onclick="">  
+            <input class="button theme1-btn" type="button" value="1" onclick="calculate('1')">
+            <input class="button theme1-btn" type="button" value="2" onclick="calculate('2')">    
+            <input class="button theme1-btn" type="button" value="3" onclick="calculate('3')">    
+            <input class="button theme1-btn" type="button" value="-" onclick="calculate('-')">  
 
-            <input class="button theme1-btn" type="button" value="." onclick="">
-            <input class="button theme1-btn" type="button" value="0" onclick="">    
-            <input class="button theme1-btn" type="button" value="/" onclick="">    
-            <input class="button theme1-btn" type="button" value="x" onclick="">  
+            <input class="button theme1-btn" type="button" value="." onclick="calculate('.')">
+            <input class="button theme1-btn" type="button" value="0" onclick="calculate('0')">    
+            <input class="button theme1-btn" type="button" value="/" onclick="calculate('/')">    
+            <input class="button theme1-btn" type="button" value="x" onclick="calculate('*')">  
 
-            <input class="big-button theme1-big-button col-span-2" type="button" value="RESET" onclick="">
+            <input class="big-button theme1-big-button col-span-2" type="button" value="RESET" onclick="reset()">
             <input class="big-button big-button-equal theme1-big-red-button col-span-2" type="button" value="=" onclick="">
         </keypad>
     </main>
