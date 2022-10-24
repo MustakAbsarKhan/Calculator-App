@@ -1,7 +1,13 @@
 const screenDisplay = document.getElementById("screen-input-selector");
 
-const calculate = (input) => {
-  capturedInput = screenDisplay.value += input;
+function input(x) {
+  screenDisplay.value += x;
+  localStorage.setItem("display", screenDisplay.value);
+}
+
+const result = () => {
+  reset();
+  screenDisplay.value = eval(localStorage.getItem("display"));
 };
 
 const del = () => {
