@@ -33,7 +33,7 @@
     };
 
     .theme2-btn{
-        @apply bg-[#E6E4E0] border-t2keySD2 active:bg-[#FFFFFF] cursor-pointer
+        @apply bg-[#E6E4E0] border-t2keySD2 active:bg-[#FFFFFF] text-t2text1 cursor-pointer
     };
 
     .theme3-btn{
@@ -41,26 +41,26 @@
     };
 
     .theme1-big-button{
-        @apply bg-[#64719B] border-t1keySD/90 active:bg-[#A2B3E1]
+        @apply bg-[#64719B] border-t1keySD/90 active:bg-[#A2B3E1] text-t1text2
     };
 
     .theme2-big-button{
-        @apply bg-[#368386] border-t2keySD active:bg-[#62B5BD]
+        @apply bg-[#368386] border-t2keySD active:bg-[#62B5BD] text-t2text2
     };
 
     .theme3-big-button{
-        @apply bg-[#56147C] border-t3keySD active:bg-[#8631B0]
+        @apply bg-[#56147C] border-t3keySD active:bg-[#8631B0] text-t3text3
     };
 
     .theme1-big-red-button{
-        @apply bg-[#D13F30] border-t1keySD1 active:bg-[#F96C5B]
+        @apply bg-[#D13F30] border-t1keySD1 active:bg-[#F96C5B] text-t1text2
     };
 
     .theme2-big-red-button{
-        @apply bg-[#C85401] border-t2keySD1 active:bg-[#FF8A35]
+        @apply bg-[#C85401] border-t2keySD1 active:bg-[#FF8A35] text-t2text2
     };
 
     .theme3-big-red-button{
-        @apply bg-[#00DFD0] border-t3keySD1 active:bg-[#93FCF8]
+        @apply bg-[#00DFD0] border-t3keySD1 active:bg-[#93FCF8] text-t3text2
     };
 };
