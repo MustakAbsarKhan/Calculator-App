@@ -11,12 +11,14 @@ module.exports = {
       },
       screens: {
         usm: { min: "280px" },
+        msm: { min: "320px" },
         usm1: { min: "350px" },
         umd: { min: "400px" },
         umd1: { min: "500px" },
         umd2: { min: "800px" },
         ulg: { min: "900px" },
-        llg: { min: "1023px" },
+        llg: { min: "1010px" },
+        sxl: { min: "1279px" },
 
         // => @media (max-width: 640px) { ... }
       },
