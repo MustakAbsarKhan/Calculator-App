@@ -10,7 +10,14 @@ module.exports = {
         sans: ["League Spartan", ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        usm: { max: "281px" },
+        usm: { min: "280px" },
+        usm1: { min: "350px" },
+        umd: { min: "400px" },
+        umd1: { min: "500px" },
+        umd2: { min: "800px" },
+        ulg: { min: "900px" },
+        llg: { min: "1023px" },
+
         // => @media (max-width: 640px) { ... }
       },
     },
