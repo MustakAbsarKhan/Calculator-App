@@ -19,10 +19,29 @@ const bigbuttonDarkSelector = [...bigbuttonDark];
 
 const bigbuttonEqual = document.querySelector(".big-button-equal");
 
-// Theme 1 Toggle 1
-toggle1.addEventListener("click", () => {
-  console.log("toggle 1 clicked");
-  bodySelector.classList.remove("bg-[#E6E6E6", "bg-[#17062A]");
+//hides the inactive toggle buttons on click and stores the preference in the local storage for having it back after reload
+toggleHide = (x) => {
+  x == "toggle1"
+    ? ((toggle1.style.opacity = "1"),
+      (toggle2.style.opacity = "0"),
+      (toggle3.style.opacity = "0"),
+      localStorage.setItem("clicked", "toggle1"))
+    : x == "toggle2"
+    ? ((toggle1.style.opacity = "0"),
+      (toggle2.style.opacity = "1"),
+      (toggle3.style.opacity = "0"),
+      localStorage.setItem("clicked", "toggle2"))
+    : x == "toggle3"
+    ? ((toggle1.style.opacity = "0"),
+      (toggle2.style.opacity = "0"),
+      (toggle3.style.opacity = "1"),
+      localStorage.setItem("clicked", "toggle3"))
+    : console.log("Infinity :)!!");
+};
+
+//theme 1 color customization
+theme1 = () => {
+  bodySelector.classList.remove("bg-[#E6E6E6]", "bg-[#17062A]");
   bodySelector.classList.add("bg-t1mainBG");
 
   texttopleftSelector.classList.remove("text-t2text1", "text-t3text1");
@@ -72,11 +91,10 @@ toggle1.addEventListener("click", () => {
     "theme3-big-red-button"
   );
   bigbuttonEqual.classList.add("theme1-big-red-button");
-});
+};
 
-//Theme 2 Toggle 2
-toggle2.addEventListener("click", () => {
-  console.log("toggle 2 clicked");
+//theme 2 color customization
+theme2 = () => {
   bodySelector.classList.remove("bg-t1mainBG", "bg-[#17062A]");
   bodySelector.classList.add("bg-[#E6E6E6");
 
@@ -124,12 +142,10 @@ toggle2.addEventListener("click", () => {
     "theme3-big-red-button"
   );
   bigbuttonEqual.classList.add("theme2-big-red-button");
-});
+};
 
-// Theme 3 Toggle 3
-toggle3.addEventListener("click", () => {
-  console.log("toggle 3 clicked");
-
+//theme 3 color customization
+theme3 = () => {
   bodySelector.classList.remove("bg-[#E6E6E6", "bg-t1mainBG");
   bodySelector.classList.add("bg-[#17062A]");
 
@@ -180,4 +196,40 @@ toggle3.addEventListener("click", () => {
     "theme2-big-red-button"
   );
   bigbuttonEqual.classList.add("theme3-big-red-button");
+};
+
+//loads user preference after reload based on user's previous session
+window.onload = () => {
+  "toggle1" == localStorage.getItem("clicked")
+    ? (toggleHide("toggle1"), theme1())
+    : "toggle2" == localStorage.getItem("clicked")
+    ? (toggleHide("toggle2"), theme2())
+    : "toggle3" == localStorage.getItem("clicked")
+    ? (toggleHide("toggle3"), theme3())
+    : console.log("infinity");
+};
+
+// Theme 1 Toggle 1
+toggle1.addEventListener("click", () => {
+  console.log("toggle 1 clicked");
+
+  const activeButton = "toggle1";
+  toggleHide(activeButton);
+  theme1();
+});
+
+//Theme 2 Toggle 2
+toggle2.addEventListener("click", () => {
+  console.log("toggle 2 clicked");
+  const activeButton = "toggle2";
+  toggleHide(activeButton);
+  theme2();
+});
+
+// Theme 3 Toggle 3
+toggle3.addEventListener("click", () => {
+  console.log("toggle 3 clicked");
+  const activeButton = "toggle3";
+  toggleHide(activeButton);
+  theme3();
 });
