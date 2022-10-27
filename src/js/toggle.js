@@ -229,3 +229,20 @@ toggle3.addEventListener("click", () => {
   toggleHide(activeButton);
   theme3();
 });
+
+//clears all local storage data saved from the active session
+const resetdata = () => {
+  localStorage.clear();
+  console.log(
+    "Local Storage data(for this site) is deleted with the double tap on the toggle buttons"
+  );
+};
+
+// hard reset of local storage data on double click on toggle buttons
+toggleArray.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    item.addEventListener("dblclick", () => {
+      resetdata();
+    });
+  });
+});
