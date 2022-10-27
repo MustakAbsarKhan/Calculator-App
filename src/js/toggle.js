@@ -206,13 +206,11 @@ window.onload = () => {
     ? (toggleHide("toggle2"), theme2())
     : "toggle3" == localStorage.getItem("clicked")
     ? (toggleHide("toggle3"), theme3())
-    : console.log("infinity");
+    : ((activeButton = "toggle1"), toggleHide("toggle1"), theme1());
 };
 
 // Theme 1 Toggle 1
 toggle1.addEventListener("click", () => {
-  console.log("toggle 1 clicked");
-
   const activeButton = "toggle1";
   toggleHide(activeButton);
   theme1();
@@ -220,7 +218,6 @@ toggle1.addEventListener("click", () => {
 
 //Theme 2 Toggle 2
 toggle2.addEventListener("click", () => {
-  console.log("toggle 2 clicked");
   const activeButton = "toggle2";
   toggleHide(activeButton);
   theme2();
@@ -228,7 +225,6 @@ toggle2.addEventListener("click", () => {
 
 // Theme 3 Toggle 3
 toggle3.addEventListener("click", () => {
-  console.log("toggle 3 clicked");
   const activeButton = "toggle3";
   toggleHide(activeButton);
   theme3();
