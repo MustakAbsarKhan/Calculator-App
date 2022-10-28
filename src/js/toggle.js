@@ -41,17 +41,26 @@ toggleHide = (x) => {
 
 //theme 1 color customization
 theme1 = () => {
-  bodySelector.classList.remove("bg-[#E6E6E6]", "bg-[#17062A]");
-  bodySelector.classList.add("bg-t1mainBG");
+  bodySelector.classList.remove("theme2-body", "theme3-body");
+  bodySelector.classList.add("theme1-body");
 
-  texttopleftSelector.classList.remove("text-t2text1", "text-t3text1");
-  texttopleftSelector.classList.add("text-t1text2");
+  texttopleftSelector.classList.remove(
+    "theme2-texttopleft",
+    "theme3-texttopleft"
+  );
+  texttopleftSelector.classList.add("theme1-texttopleft");
 
-  texttoprightSelector.classList.remove("text-t2text1", "text-t3text1");
+  texttoprightSelector.classList.remove(
+    "theme2-texttopleft",
+    "theme3-texttopleft"
+  );
   texttoprightSelector.classList.add("text-t1keyBG1");
 
-  togglenumberSelector.classList.remove("text-t2text1", "text-t3text1");
-  togglenumberSelector.classList.add("text-t1text2");
+  togglenumberSelector.classList.remove(
+    "theme2-texttopleft",
+    "theme3-texttopleft"
+  );
+  togglenumberSelector.classList.add("theme1-texttopleft");
 
   //reduces time by looping and selecting each item of the array
   toggleArray.forEach((element) => {
@@ -59,22 +68,20 @@ theme1 = () => {
     element.classList.add("theme1-toggle-color");
   });
 
-  togglebarSelector.classList.remove("bg-[#D5CCCB]", "bg-[#1E0936]");
-  togglebarSelector.classList.add("bg-t1toggleBG");
+  togglebarSelector.classList.remove(
+    "theme2-togglebarBG",
+    "theme3-togglebarBG"
+  );
+  togglebarSelector.classList.add("theme1-togglebarBG");
 
   screeninputSelector.classList.remove(
-    "bg-t2screenBG",
-    "text-t2text1",
-    "bg-t3toggleKeypadScreenBG",
-    "text-t3text1"
+    "theme2-screeninputSTYLE",
+    "theme3-screeninputSTYLE"
   );
-  screeninputSelector.classList.add("bg-t1screenBG", "text-t1text2");
+  screeninputSelector.classList.add("theme1-screeninputSTYLE");
 
-  keypadSelector.classList.remove(
-    "bg-t2togglekpBG",
-    "bg-t3toggleKeypadScreenBG"
-  );
-  keypadSelector.classList.add("bg-t1toggleBG");
+  keypadSelector.classList.remove("theme2-keypadStyle", "theme3-keypadStyle");
+  keypadSelector.classList.add("theme1-keypadStyle");
 
   buttonSelector.map((selectedButton) => {
     selectedButton.classList.remove("theme2-btn", "theme3-btn");
@@ -95,17 +102,23 @@ theme1 = () => {
 
 //theme 2 color customization
 theme2 = () => {
-  bodySelector.classList.remove("bg-t1mainBG", "bg-[#17062A]");
-  bodySelector.classList.add("bg-[#E6E6E6");
+  bodySelector.classList.remove("theme1-body", "theme3-body");
+  bodySelector.classList.add("theme2-body");
 
-  texttopleftSelector.classList.remove("text-t1text2", "text-t3text1");
-  texttopleftSelector.classList.add("text-t2text1");
+  texttopleftSelector.classList.remove(
+    "theme1-texttopleft",
+    "theme3-texttopleft"
+  );
+  texttopleftSelector.classList.add("theme2-texttopleft");
 
-  texttoprightSelector.classList.remove("text-t1keyBG1", "text-t3text1");
-  texttoprightSelector.classList.add("text-t2text1");
+  texttoprightSelector.classList.remove("text-t1keyBG1", "theme3-texttopleft");
+  texttoprightSelector.classList.add("theme2-texttopleft");
 
-  togglenumberSelector.classList.remove("text-t1text2", "text-t3text1");
-  togglenumberSelector.classList.add("text-t2text1");
+  togglenumberSelector.classList.remove(
+    "theme1-texttopleft",
+    "theme3-texttopleft"
+  );
+  togglenumberSelector.classList.add("theme2-texttopleft");
 
   //reduces time by looping and selecting each item of the array
   toggleArray.forEach((element) => {
@@ -113,19 +126,20 @@ theme2 = () => {
     element.classList.add("theme2-toggle-color");
   });
 
-  togglebarSelector.classList.remove("bg-t1toggleBG", "bg-[#1E0936]");
-  togglebarSelector.classList.add("bg-[#D5CCCB]");
+  togglebarSelector.classList.remove(
+    "theme1-togglebarBG",
+    "theme3-togglebarBG"
+  );
+  togglebarSelector.classList.add("theme2-togglebarBG");
 
   screeninputSelector.classList.remove(
-    "bg-t1screenBG",
-    "text-t1text2",
-    "bg-t3toggleKeypadScreenBG",
-    "text-t3text1"
+    "theme1-screeninputSTYLE",
+    "theme3-screeninputSTYLE"
   );
-  screeninputSelector.classList.add("bg-t2screenBG", "text-t2text1");
+  screeninputSelector.classList.add("theme2-screeninputSTYLE");
 
-  keypadSelector.classList.remove("bg-t1toggleBG", "bg-t3toggleKeypad");
-  keypadSelector.classList.add("bg-t2togglekpBG");
+  keypadSelector.classList.remove("theme1-keypadStyle", "theme3-keypadStyle");
+  keypadSelector.classList.add("theme2-keypadStyle");
 
   buttonSelector.map((selectedButton) => {
     selectedButton.classList.remove("theme1-btn", "theme3-btn");
@@ -146,17 +160,23 @@ theme2 = () => {
 
 //theme 3 color customization
 theme3 = () => {
-  bodySelector.classList.remove("bg-[#E6E6E6", "bg-t1mainBG");
-  bodySelector.classList.add("bg-[#17062A]");
+  bodySelector.classList.remove("theme2-body", "theme1-body");
+  bodySelector.classList.add("theme3-body");
 
-  texttopleftSelector.classList.remove("text-t2text1", "text-t1text2");
-  texttopleftSelector.classList.add("text-t3text1");
+  texttopleftSelector.classList.remove(
+    "theme2-texttopleft",
+    "theme1-texttopleft"
+  );
+  texttopleftSelector.classList.add("theme3-texttopleft");
 
-  texttoprightSelector.classList.remove("text-t2text1", "text-t1keyBG1");
-  texttoprightSelector.classList.add("text-t3text1");
+  texttoprightSelector.classList.remove("theme2-texttopleft", "text-t1keyBG1");
+  texttoprightSelector.classList.add("theme3-texttopleft");
 
-  togglenumberSelector.classList.remove("text-t2text1", "text-t1text2");
-  togglenumberSelector.classList.add("text-t3text1");
+  togglenumberSelector.classList.remove(
+    "theme2-texttopleft",
+    "theme1-texttopleft"
+  );
+  togglenumberSelector.classList.add("theme3-texttopleft");
 
   //reduces time by looping and selecting each item of the array
   toggleArray.forEach((element) => {
@@ -164,22 +184,20 @@ theme3 = () => {
     element.classList.add("theme3-toggle-color");
   });
 
-  togglebarSelector.classList.remove("bg-[#D5CCCB]", "bg-t1toggleBG");
-  togglebarSelector.classList.add("bg-[#1E0936]");
+  togglebarSelector.classList.remove(
+    "theme2-togglebarBG",
+    "theme1-togglebarBG"
+  );
+  togglebarSelector.classList.add("theme3-togglebarBG");
 
   screeninputSelector.classList.remove(
-    "bg-t2screenBG",
-    "text-t2text1",
-    "bg-t1screenBG",
-    "text-t1text2"
+    "theme1-screeninputSTYLE",
+    "theme2-screeninputSTYLE"
   );
-  screeninputSelector.classList.add(
-    "bg-t3toggleKeypadScreenBG",
-    "text-t3text1"
-  );
+  screeninputSelector.classList.add("theme3-screeninputSTYLE");
 
-  keypadSelector.classList.remove("bg-t1toggleBG", "bg-t2togglekpBG");
-  keypadSelector.classList.add("bg-t3toggleKeypadScreenBG");
+  keypadSelector.classList.remove("theme1-keypadStyle", "theme2-keypadStyle");
+  keypadSelector.classList.add("theme3-keypadStyle");
 
   buttonSelector.map((selectedButton) => {
     selectedButton.classList.remove("theme1-btn", "theme2-btn");

@@ -14,39 +14,39 @@
     <title>Calculator</title>
 </head>
 
-<body class="font-sans bg-t1mainBG flex justify-center items-center h-[100vh]" id="body-selector">
+<body class="font-sans flex justify-center items-center h-[100vh]" id="body-selector">
     <main class="flex flex-col justify-center items-center min-w-[25%] h-[70%] min-h-[400px] max-h-[1080px] m-6">
         <topbar class="w-full h-[10%] px-1 my-2 flex items-center justify-center">
-            <text-top-left class="w-2/6 h-full font-bold text-5xl text-t1text2 flex items-end" id="text-top-left-selector">
+            <text-top-left class="w-2/6 h-full font-bold text-5xl flex items-end" id="text-top-left-selector">
                 calc
             </text-top-left>
 
             <right class="flex h-full w-4/6 justify-end items-end">
-                <text-top-right class="h-[50%] w-1/2 llg:h-[40%] usm:h-[40%] sxl:h-[50%] umd1:h-[50%] msm:h-[50%] ulg:h-[45%] llg:w-[60%] flex items-center justify-end text-xs text-t1keyBG1 uppercase tracking-wider" id="text-top-right-selector">
+                <text-top-right class="h-[50%] w-1/2 llg:h-[40%] usm:h-[40%] sxl:h-[50%] umd1:h-[50%] msm:h-[50%] ulg:h-[45%] llg:w-[60%] flex items-center justify-end text-xs uppercase tracking-wider" id="text-top-right-selector">
                     Theme
                 </text-top-right>
                 <!-- 18% -->
                 <div class="h-full w-1/2 flex flex-col justify-end items-end">
-                    <numbers class="w-[60%] ulg:w-[70%] llg:w-[60%] flex justify-around items-center text-t1text2 text-sm" id="toggle-number-selector">
+                    <numbers class="w-[60%] ulg:w-[70%] llg:w-[60%] flex justify-around items-center text-sm" id="toggle-number-selector">
                         <p class="flex justify-around">1</p>
                         <p class="flex justify-around">2</p>
                         <p class="flex justify-around">3</p>
                     </numbers>
                     <!-- 60% -->
                     <!-- 16% -->
-                    <toggle class="w-[60%] h-[50%] ulg:w-[70%] ulg:h-[45%] llg:w-[60%] llg:h-[50%] flex justify-around items-center bg-t1toggleBG rounded-full" id="toggle-bar-selector">
-                        <input id="tg1" class="toggle usm:h-[50%] usm:w-[25%] msm:h-[65%] msm:w-[23%] usm1:h-[60%] usm1:w-[22%] umd:h-[60%] umd:w-[23%] umd1:h-[65%] umd1:w-[20%] umd2:h-[60%] umd2:w-[23%] md:h-[60%] md:w-[18%] ulg:h-[65%] ulg:w-[20%] llg:w-[16%] llg:h-[63%] sxl:w-[20%] sxl:h-[65%]    usm:mt-[0.070rem] msm:mt-0 usm1:mt-[0.053rem] llg:mt-[0.065rem] umd2:mt-[0.08rem] lg-mt-[0rem] umd:mt-[0.03rem] umd1:mt-[0.06rem] sxl::mt-0  usm:ml-[0.035rem] usm1:ml-[0.045rem] umd:ml-[0.08rem] llg:ml-[0.00rem]   leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
-                        <input id="tg2" class="toggle usm:h-[50%] usm:w-[25%] msm:h-[65%] msm:w-[23%] usm1:h-[60%] usm1:w-[22%] umd:h-[60%] umd:w-[23%] umd1:h-[65%] umd1:w-[20%] umd2:h-[60%] umd2:w-[23%] md:h-[60%] md:w-[18%] ulg:h-[65%] ulg:w-[20%] llg:w-[16%] llg:h-[63%] sxl:w-[20%] sxl:h-[65%]    usm:mt-[0.075rem] msm:mt-0 usm1:mt-[0.053rem] llg:mt-[0.065rem] umd2:mt-[0.08rem] lg-mt-[0rem] umd:mt-[0.03rem] umd1:mt-[0.06rem] sxl::mt-0  leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
-                        <input id="tg3" class="toggle usm:h-[50%] usm:w-[25%] msm:h-[65%] msm:w-[23%] usm1:h-[60%] usm1:w-[22%] umd:h-[60%] umd:w-[23%] umd1:h-[65%] umd1:w-[20%] umd2:h-[60%] umd2:w-[23%] md:h-[60%] md:w-[18%] ulg:h-[65%] ulg:w-[20%] llg:w-[16%] llg:h-[63%] sxl:w-[20%] sxl:h-[65%]    usm:mt-[0.075rem] msm:mt-0 usm1:mt-[0.053rem] llg:mt-[0.065rem] umd2:mt-[0.08rem] lg-mt-[0rem] umd:mt-[0.03rem] umd1:mt-[0.06rem] sxl::mt-0  leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
+                    <toggle class="w-[60%] h-[50%] ulg:w-[70%] ulg:h-[45%] llg:w-[60%] llg:h-[50%] flex justify-around items-center rounded-full" id="toggle-bar-selector">
+                        <input id="tg1" class="toggle toggle1-responsive leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
+                        <input id="tg2" class="toggle toggle2-responsive leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
+                        <input id="tg3" class="toggle toggle3-responsive leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
                     </toggle>
                 </div>
             </right>  
 
         </topbar>
         <screen class="w-full h-[20%] my-2">
-            <input type="text" class="w-full h-full bg-t1screenBG text-t1text2 text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="">
+            <input type="text" class="w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="">
         </screen>
-        <keypad id="keypad-selector" class="h-[70%] max-h-[550px] w-full bg-t1toggleBG rounded-lg grid grid-cols-4 grid-rows-5 p-4 usm:p-1 my-2">
+        <keypad id="keypad-selector" class="h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 p-4 usm:p-1 umd:p-5 llg:p-1 my-2">
             <input class="button theme1-btn" type="button" value="7" onclick="input('7')">
             <input class="button theme1-btn" type="button" value="8" onclick="input('8')">    
             <input class="button theme1-btn" type="button" value="9" onclick="input('9')">    
