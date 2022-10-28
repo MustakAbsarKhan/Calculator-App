@@ -225,6 +225,10 @@ window.onload = () => {
     : "toggle3" == localStorage.getItem("clicked")
     ? (toggleHide("toggle3"), theme3())
     : ((activeButton = "toggle1"), toggleHide("toggle1"), theme1());
+
+  //loading the value which were displayed before the reload.
+  //window.onload overrides itself if called more than once. That's why this piece of code is written here instead of the main.js file where all the calculations are written
+  displaylocalStorageDATA(); //function from main.js
 };
 
 // Theme 1 Toggle 1
