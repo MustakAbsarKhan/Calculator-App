@@ -22,22 +22,21 @@
             </text-top-left>
 
             <right class="flex h-full w-4/6 justify-end items-end">
-                <text-top-right class="h-[50%] w-1/2 llg:h-[40%] usm:h-[40%] sxl:h-[50%] umd1:h-[50%] msm:h-[50%] ulg:h-[45%] llg:w-[60%] flex items-center justify-end text-xs uppercase tracking-wider" id="text-top-right-selector">
+                <text-top-right class="h-[50%] w-1/2 flex items-center justify-end text-xs uppercase tracking-wider text-top-right-responsive" id="text-top-right-selector">
                     Theme
                 </text-top-right>
-                <!-- 18% -->
+                
                 <div class="h-full w-1/2 flex flex-col justify-end items-end">
-                    <numbers class="w-[60%] ulg:w-[70%] llg:w-[60%] flex justify-around items-center text-sm" id="toggle-number-selector">
+                    <numbers class="w-[60%] numbers-responsive flex justify-around items-center text-sm" id="toggle-number-selector">
                         <p class="flex justify-around">1</p>
                         <p class="flex justify-around">2</p>
                         <p class="flex justify-around">3</p>
                     </numbers>
-                    <!-- 60% -->
-                    <!-- 16% -->
-                    <toggle class="w-[60%] h-[50%] ulg:w-[70%] ulg:h-[45%] llg:w-[60%] llg:h-[50%] flex justify-around items-center rounded-full" id="toggle-bar-selector">
-                        <input id="tg1" class="toggle toggle1-responsive leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
-                        <input id="tg2" class="toggle toggle2-responsive leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
-                        <input id="tg3" class="toggle toggle3-responsive leading-none theme1-toggle-color" type="radio" name="toggle" style="opacity:0;"/>
+                    
+                    <toggle class="w-[60%] h-[50%] toggle-bar-responsive flex justify-around items-center rounded-full" id="toggle-bar-selector">
+                        <input id="tg1" class="toggle toggle1-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
+                        <input id="tg2" class="toggle toggle2-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
+                        <input id="tg3" class="toggle toggle3-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
                     </toggle>
                 </div>
             </right>  
@@ -46,7 +45,7 @@
         <screen class="w-full h-[20%] my-2">
             <input type="text" class="w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="">
         </screen>
-        <keypad id="keypad-selector" class="h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 p-4 usm:p-1 umd:p-5 llg:p-1 my-2">
+        <keypad id="keypad-selector" class="h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
             <input class="button theme1-btn" type="button" value="7" onclick="input('7')">
             <input class="button theme1-btn" type="button" value="8" onclick="input('8')">    
             <input class="button theme1-btn" type="button" value="9" onclick="input('9')">    
