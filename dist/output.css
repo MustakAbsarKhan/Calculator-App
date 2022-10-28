@@ -831,12 +831,6 @@ video {
   }
 }
 
-@media (min-width: 800px) {
-  .button {
-    padding-top: 0.5rem;
-  }
-}
-
 @media (min-width: 1010px) {
   .button {
     margin-top: 0.25rem;
@@ -868,12 +862,6 @@ video {
 @media (min-width: 400px) {
   .big-button {
     margin: 0.5rem;
-  }
-}
-
-@media (min-width: 800px) {
-  .big-button {
-    padding-top: 0.5rem;
   }
 }
 

@@ -105,11 +105,11 @@
     };
 
     .button{
-        @apply m-2 usm:m-1 umd:m-2 llg:my-1 pt-2 umd2:pt-2 llg:pt-[.40rem] rounded-lg border-b-4 text-center text-3xl subpixel-antialiased cursor-pointer
+        @apply m-2 usm:m-1 umd:m-2 llg:my-1 pt-2 llg:pt-[.40rem] rounded-lg border-b-4 text-center text-3xl subpixel-antialiased cursor-pointer
     };
 
     .big-button{
-        @apply m-2 usm:m-1 umd:m-2 llg:my-1 pt-2 umd2:pt-2 llg:pt-[.40rem] rounded-lg border-b-4 text-center text-2xl subpixel-antialiased tracking-wide cursor-pointer
+        @apply m-2 usm:m-1 umd:m-2 llg:my-1 pt-2 llg:pt-[.40rem] rounded-lg border-b-4 text-center text-2xl subpixel-antialiased tracking-wide cursor-pointer
     };
 
 
