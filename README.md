@@ -1,7 +1,6 @@
 # Calculator- App V1.0
 
-[![TailwindCSS Version](https://badge.fury.io/js/tailwind.svg)](https://badge.fury.io/js/tailwind) [![JS-ES6](https://badge.fury.io/js/es6.svg)](https://badge.fury.io/js/es6)
-
+[![npm version](https://badge.fury.io/js/tailwindcss.svg)](https://badge.fury.io/js/tailwindcss)
 <br>
 
 -> **[Live URL - Click Here]()** <br>
