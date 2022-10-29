@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlLine">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,60 +14,60 @@
     <title>Calculator</title>
 </head>
 
-<body class="font-sans flex justify-center items-center h-[100vh]" id="body-selector">
+<body class="theme2-body dark:theme3-body font-sans flex justify-center items-center h-[100vh]" id="body-selector">
     <main class="flex flex-col justify-center items-center min-w-[25%] h-[70%] min-h-[400px] max-h-[1080px] m-6">
         <topbar class="w-full h-[10%] px-1 my-2 flex items-center justify-center">
-            <text-top-left class="w-2/6 h-full font-bold text-5xl flex items-end" id="text-top-left-selector">
+            <text-top-left class="theme2-texttopleft dark:theme3-texttopleft w-2/6 h-full font-bold text-5xl flex items-end" id="text-top-left-selector">
                 calc
             </text-top-left>
 
             <right class="flex h-full w-4/6 justify-end items-end">
-                <text-top-right class="h-[50%] w-1/2 flex items-center justify-end text-xs uppercase tracking-wider text-top-right-responsive" id="text-top-right-selector">
+                <text-top-right class="theme2-texttopleft dark:theme3-texttopleft h-[50%] w-1/2 flex items-center justify-end text-xs uppercase tracking-wider text-top-right-responsive" id="text-top-right-selector">
                     Theme
                 </text-top-right>
                 
                 <div class="h-full w-1/2 flex flex-col justify-end items-end">
-                    <numbers class="w-[60%] numbers-responsive flex justify-around items-center text-sm" id="toggle-number-selector">
+                    <numbers class="theme2-texttopleft dark:theme3-texttopleft w-[60%] numbers-responsive flex justify-around items-center text-sm" id="toggle-number-selector">
                         <p class="flex justify-around">1</p>
                         <p class="flex justify-around">2</p>
                         <p class="flex justify-around">3</p>
                     </numbers>
                     
-                    <toggle class="w-[60%] h-[50%] toggle-bar-responsive flex justify-around items-center rounded-full" id="toggle-bar-selector">
-                        <input id="tg1" class="toggle toggle1-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
-                        <input id="tg2" class="toggle toggle2-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
-                        <input id="tg3" class="toggle toggle3-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
+                    <toggle class="theme2-togglebarBG dark:theme3-togglebarBG w-[60%] h-[50%] toggle-bar-responsive flex justify-around items-center rounded-full" id="toggle-bar-selector">
+                        <input id="tg1" class="theme2-toggle-color dark:theme3-toggle-color toggle toggle1-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
+                        <input id="tg2" class="theme2-toggle-color dark:theme3-toggle-color toggle toggle2-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
+                        <input id="tg3" class="theme2-toggle-color dark:theme3-toggle-color toggle toggle3-responsive leading-none" type="radio" name="toggle" style="opacity:0;"/>
                     </toggle>
                 </div>
             </right>  
 
         </topbar>
         <screen class="w-full h-[20%] my-2">
-            <input type="text" class="w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="" inputmode="none">
+            <input type="text" class="theme2-screeninputSTYLE dark:theme3-screeninputSTYLE w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="" inputmode="none">
         </screen>
-        <keypad id="keypad-selector" class="h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
-            <input class="button theme1-btn" type="button" value="7" onclick="input('7')">
-            <input class="button theme1-btn" type="button" value="8" onclick="input('8')">    
-            <input class="button theme1-btn" type="button" value="9" onclick="input('9')">    
-            <input class="big-button theme1-big-button" type="button" value="DEL" onclick="del()">    
+        <keypad id="keypad-selector" class="theme2-keypadStyle dark:theme3-keypadStyle h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="7" onclick="input('7')">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="8" onclick="input('8')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="9" onclick="input('9')">    
+            <input class="big-button theme2-big-button dark:theme3-big-button" type="button" value="DEL" onclick="del()">    
 
-            <input class="button theme1-btn" type="button" value="4" onclick="input('4')">
-            <input class="button theme1-btn" type="button" value="5" onclick="input('5')">    
-            <input class="button theme1-btn" type="button" value="6" onclick="input('6')">    
-            <input class="button theme1-btn" type="button" value="+" onclick="input('+')">  
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="4" onclick="input('4')">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="5" onclick="input('5')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="6" onclick="input('6')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="+" onclick="input('+')">  
 
-            <input class="button theme1-btn" type="button" value="1" onclick="input('1')">
-            <input class="button theme1-btn" type="button" value="2" onclick="input('2')">    
-            <input class="button theme1-btn" type="button" value="3" onclick="input('3')">    
-            <input class="button theme1-btn" type="button" value="-" onclick="input('-')">  
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="1" onclick="input('1')">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="2" onclick="input('2')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="3" onclick="input('3')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="-" onclick="input('-')">  
 
-            <input class="button theme1-btn" type="button" value="." onclick="input('.')">
-            <input class="button theme1-btn" type="button" value="0" onclick="input('0')">    
-            <input class="button theme1-btn" type="button" value="/" onclick="input('/')">    
-            <input class="button theme1-btn" type="button" value="x" onclick="input('*')">  
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="." onclick="input('.')">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="0" onclick="input('0')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="/" onclick="input('/')">    
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="x" onclick="input('*')">  
 
-            <input class="big-button theme1-big-button col-span-2" type="button" value="RESET" onclick="reset()">
-            <input class="big-button big-button-equal theme1-big-red-button col-span-2" type="button" value="=" onclick="result()">
+            <input class="big-button theme2-big-button dark:theme3-big-button col-span-2" type="button" value="RESET" onclick="reset()">
+            <input class="big-button big-button-equal theme2-big-red-button  dark:theme3-big-red-button col-span-2" type="button" value="=" onclick="result()">
         </keypad>
     </main>
 </body>

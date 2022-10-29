@@ -1404,4 +1404,84 @@ video {
 .blur {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.dark .dark\:theme3-body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 6 42 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-texttopleft {
+  --tw-text-opacity: 1;
+  color: hsl(52 100% 62% / var(--tw-text-opacity));
+}
+
+.dark .dark\:theme3-toggle-color {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 222 203 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-toggle-color:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(149 252 248 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-togglebarBG {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 9 54 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-screeninputSTYLE {
+  --tw-text-opacity: 1;
+  color: hsl(52 100% 62% / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: hsl(268 71% 12% / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-keypadStyle {
+  --tw-bg-opacity: 1;
+  background-color: hsl(268 71% 12% / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-btn {
+  cursor: pointer;
+  --tw-border-opacity: 1;
+  border-color: hsl(290 70% 36% / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 27 76 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(52 100% 62% / var(--tw-text-opacity));
+}
+
+.dark .dark\:theme3-btn:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 52 172 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-big-button {
+  --tw-border-opacity: 1;
+  border-color: hsl(285 91% 52% / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(86 20 124 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(0 0% 100% / var(--tw-text-opacity));
+}
+
+.dark .dark\:theme3-big-button:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 49 176 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:theme3-big-red-button {
+  --tw-border-opacity: 1;
+  border-color: hsl(177 92% 70% / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 223 208 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(198 20% 13% / var(--tw-text-opacity));
+}
+
+.dark .dark\:theme3-big-red-button:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 252 248 / var(--tw-bg-opacity));
 };

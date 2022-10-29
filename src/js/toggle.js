@@ -1,3 +1,4 @@
+const htmltagSelect = document.getElementById("htmlLine");
 const toggle1 = document.getElementById("tg1");
 const toggle2 = document.getElementById("tg2");
 const toggle3 = document.getElementById("tg3");
@@ -41,6 +42,8 @@ toggleHide = (x) => {
 
 //theme 1 color customization
 theme1 = () => {
+  htmltagSelect.classList.remove("dark");
+
   bodySelector.classList.remove("theme2-body", "theme3-body");
   bodySelector.classList.add("theme1-body");
 
@@ -102,6 +105,8 @@ theme1 = () => {
 
 //theme 2 color customization
 theme2 = () => {
+  htmltagSelect.classList.remove("dark");
+
   bodySelector.classList.remove("theme1-body", "theme3-body");
   bodySelector.classList.add("theme2-body");
 
@@ -216,15 +221,35 @@ theme3 = () => {
   bigbuttonEqual.classList.add("theme3-big-red-button");
 };
 
-//loads user preference after reload based on user's previous session
+//first on load if it is user's first visit then the UI theme will respect user's OS preference
+//if the user previously made any theme preference choice then the UI theme will load based on user's previous session
 window.onload = () => {
-  "toggle1" == localStorage.getItem("clicked")
-    ? (toggleHide("toggle1"), theme1())
-    : "toggle2" == localStorage.getItem("clicked")
-    ? (toggleHide("toggle2"), theme2())
-    : "toggle3" == localStorage.getItem("clicked")
-    ? (toggleHide("toggle3"), theme3())
-    : ((activeButton = "toggle1"), toggleHide("toggle1"), theme1());
+  if (localStorage.getItem("clicked") == null) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      //activates during night mode
+      htmltagSelect.classList.add("dark");
+      const activeButton = "toggle3";
+      toggleHide(activeButton);
+    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      //activates during light mode
+      const activeButton = "toggle2";
+      toggleHide(activeButton);
+      theme2();
+    } else {
+      //failsafe- if os can't determine
+      const activeButton = "toggle1";
+      toggleHide(activeButton);
+      theme1();
+    }
+  } else {
+    "toggle1" == localStorage.getItem("clicked")
+      ? (toggleHide("toggle1"), theme1())
+      : "toggle2" == localStorage.getItem("clicked")
+      ? (toggleHide("toggle2"), theme2())
+      : "toggle3" == localStorage.getItem("clicked")
+      ? (toggleHide("toggle3"), theme3())
+      : ((activeButton = "toggle1"), toggleHide("toggle1"), theme1());
+  }
 
   //loading the value which were displayed before the reload.
   //window.onload overrides itself if called more than once. That's why this piece of code is written here instead of the main.js file where all the calculations are written
