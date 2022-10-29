@@ -90,6 +90,7 @@ const del = () => {
   screenDisplay.focus(); //this focus function is used to keep the cursor at its place after selecting the mouse pointer position and deleting manually
   focusInitiate();
   deleteFeature();
+  screenDisplay.blur();
 };
 
 const reset = () => {
