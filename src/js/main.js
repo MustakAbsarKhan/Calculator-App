@@ -24,10 +24,26 @@ function input(x) {
 //calculates the result on click on the (=) button using Function constructor
 const result = () => {
   const inputData = localStorage.getItem("display");
-  displaylocalStorageREMOVE();
-  // screenDisplay.value = eval(localStorage.getItem("display"));
-  screenDisplay.value = Function("return " + inputData)(); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
-  displaylocalStorageSTORE();
+
+  if (inputData != null) {
+    //when inputdata and screendisplay value are same
+    if (inputData == screenDisplay.value) {
+      //when local storage has some value
+      displaylocalStorageREMOVE();
+      // screenDisplay.value = eval(localStorage.getItem("display"));
+      screenDisplay.value = Function("return " + inputData)(); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+      displaylocalStorageSTORE();
+    } else {
+      //when inputdata and screendisplay value are not same
+      displaylocalStorageREMOVE();
+      screenDisplay.value = Function("return " + screenDisplay.value)();
+      displaylocalStorageSTORE();
+    }
+  } else {
+    //when local storage is empty
+    screenDisplay.value = Function("return " + screenDisplay.value)();
+    displaylocalStorageSTORE();
+  }
 };
 
 //Deletes data from input field 1.Without cursor on the numbers from the last 2.With cursor on the numbers from the begining
