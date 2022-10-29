@@ -4,7 +4,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/25dfe686-bd1c-4483-b9b7-d94a796b7265/deploy-status)](https://app.netlify.com/sites/calc-mustak/deploys)
 <br>
 
--> **[Live URL - Click Here]()** <br>
+-> **[Live URL - Click Here](https://calc-mustak.netlify.app)** <br>
 
 **This is `A Smart Calculator` App With countless <i>Hidden Features</i> for making a simple calculator `Interesting` and `Smart`** <br>
 
