@@ -1,6 +1,7 @@
 # Calculator- App V1.0
 
 [![npm version](https://badge.fury.io/js/tailwindcss.svg)](https://badge.fury.io/js/tailwindcss)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/25dfe686-bd1c-4483-b9b7-d94a796b7265/deploy-status)](https://app.netlify.com/sites/calc-mustak/deploys)
 <br>
 
 -> **[Live URL - Click Here]()** <br>
