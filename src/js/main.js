@@ -45,24 +45,51 @@ const result = () => {
     displaylocalStorageSTORE();
   }
 };
+//this function gives focus to input field and places cusrsor at the very end of the input field when input field has value in it and its cursor is at the very beginning due to previous deletion
+//it is needed cause when the screen gets focused out then due to previous deletion the cursor may stay at the very first point which makes delete button funciton obsolete
+const focusInitiate = () => {
+  let screenPosition = screenDisplay.selectionStart;
+  let tempDataArray = [...screenDisplay.value];
+  if (screenPosition == 0 && tempDataArray.length != 0) {
+    screenDisplay.focus();
+    screenDisplay.setSelectionRange(tempDataArray.length, tempDataArray.length);
+  }
+};
+
+//deletes data which is prior to the cursor position and keeps the cursor at the position where the number gets deleted
+const deleteFeature = () => {
+  let screenPosition = screenDisplay.selectionStart;
+  if (screenPosition >= 1) {
+    let screenDataArray = [...screenDisplay.value];
+
+    if (screenPosition != 0) {
+      //goes at the beginning the previous number of the cursor
+
+      let remainingDataFirstPortion = screenDataArray.slice(
+        0,
+        screenPosition - 1
+      );
+      let remainingDataLastPortion = screenDataArray.slice(
+        screenPosition,
+        screenDataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat(
+        remainingDataLastPortion
+      );
+      screenDisplay.value = clearedArray.join("");
+      displaylocalStorageSTORE();
+      screenDisplay.setSelectionRange(screenPosition - 1, screenPosition - 1);
+    }
+  }
+};
 
 //Deletes data from input field 1.Without cursor on the numbers from the last 2.With cursor on the numbers from the begining
-const del = () => {
-  screenDisplay.focus();
-  let screenDataArray = [...screenDisplay.value];
-  let screenPosition = screenDisplay.selectionStart; //goes at the beginning the previous number of the cursor
 
-  let remainingDataFirstPortion = screenDataArray.slice(0, screenPosition - 1);
-  let remainingDataLastPortion = screenDataArray.slice(
-    screenPosition,
-    screenDataArray.length
-  );
-  const clearedArray = remainingDataFirstPortion.concat(
-    remainingDataLastPortion
-  );
-  screenDisplay.value = clearedArray.join("");
-  displaylocalStorageSTORE();
-  screenDisplay.setSelectionRange(screenPosition - 1, screenPosition - 1);
+const del = () => {
+  screenDisplay.focus(); //this focus function is used to keep the cursor at its place after selecting the mouse pointer position and deleting manually
+  focusInitiate();
+  deleteFeature();
 };
 
 const reset = () => {

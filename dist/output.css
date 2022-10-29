@@ -1399,4 +1399,9 @@ video {
 .text-t1keyBG1 {
   --tw-text-opacity: 1;
   color: hsl(30 25% 89% / var(--tw-text-opacity));
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 };
