@@ -293,3 +293,11 @@ toggleArray.forEach((item) => {
     });
   });
 });
+
+bodySelector.addEventListener("dblclick", () => {
+  if (screeninputSelector.inputMode == "none") {
+    screeninputSelector.inputMode = "numeric";
+  } else {
+    screeninputSelector.inputMode = "none";
+  }
+});
