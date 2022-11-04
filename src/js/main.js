@@ -85,6 +85,10 @@ function bracket() {
     screenDisplay.value += ")";
     bracketClose();
     displaylocalStorageSTORE();
+  } else {
+    //! Alerts the input error
+    swal("Invalid Input!", "Please Check Your Input Again", "error");
+    console.log("Bracket Position Error");
   }
 }
 
@@ -99,17 +103,21 @@ const result = () => {
         //when local storage has some value
         displaylocalStorageREMOVE();
         // screenDisplay.value = eval(localStorage.getItem("display"));
-        screenDisplay.value = Function("return " + inputData)(); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+        screenDisplay.value = Function("return " + inputData)().toFixed(4); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
         displaylocalStorageSTORE();
       } else {
         //when inputdata and screendisplay value are not same
         displaylocalStorageREMOVE();
-        screenDisplay.value = Function("return " + screenDisplay.value)();
+        screenDisplay.value = Function(
+          "return " + screenDisplay.value
+        )().toFixed(4);
         displaylocalStorageSTORE();
       }
     } else {
       //when local storage is empty
-      screenDisplay.value = Function("return " + screenDisplay.value)();
+      screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
+        4
+      );
       displaylocalStorageSTORE();
     }
   } catch (error) {
