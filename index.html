@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./src/js/main.js" defer></script>
     <script src="./src/js/toggle.js" defer></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
@@ -47,7 +48,7 @@
             <input type="text" class="theme2-screeninputSTYLE dark:theme3-screeninputSTYLE w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="" inputmode="none">
         </screen>
         <keypad id="keypad-selector" class="theme2-keypadStyle dark:theme3-keypadStyle h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
-            <input class="button theme2-btn dark:theme3-btn" type="button" value="7" onclick="input('7')">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="7" onclick="input('7')" id="dot-btn">
             <input class="button theme2-btn dark:theme3-btn" type="button" value="8" onclick="input('8')">    
             <input class="button theme2-btn dark:theme3-btn" type="button" value="9" onclick="input('9')">    
             <input class="big-button theme2-big-button dark:theme3-big-button" type="button" value="DEL" onclick="del()">    

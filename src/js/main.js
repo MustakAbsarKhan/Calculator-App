@@ -1,4 +1,5 @@
 const screenDisplay = document.getElementById("screen-input-selector");
+const dotbtnSelector = document.getElementById("dot-btn");
 
 //Stores data in the local storage
 const displaylocalStorageSTORE = () => {
@@ -17,34 +18,60 @@ const displaylocalStorageDATA = () => {
 
 //takes and records(in the local storage) all the inputs from the user and displays it on the input screen
 function input(x) {
-  screenDisplay.value += x;
-  displaylocalStorageSTORE();
+  const screendataArray = [...screenDisplay.value];
+  const lastDisplayItem = screendataArray[screendataArray.length - 1];
+
+  if (
+    [".", "+", "-", "*", "/"].includes(x) &&
+    (lastDisplayItem == "+" ||
+      lastDisplayItem == "-" ||
+      lastDisplayItem == "*" ||
+      lastDisplayItem == "/" ||
+      lastDisplayItem == ".")
+  ) {
+    console.log(lastDisplayItem);
+    del();
+    screenDisplay.value += x;
+    displaylocalStorageSTORE();
+    console.log("there is any restricted element at the end");
+  } else {
+    screenDisplay.value += x;
+    displaylocalStorageSTORE();
+    console.log("Else Running");
+  }
 }
 
 //calculates the result on click on the (=) button using Function constructor
 const result = () => {
-  const inputData = localStorage.getItem("display");
+  try {
+    const inputData = localStorage.getItem("display");
 
-  if (inputData != null) {
-    //when inputdata and screendisplay value are same
-    if (inputData == screenDisplay.value) {
-      //when local storage has some value
-      displaylocalStorageREMOVE();
-      // screenDisplay.value = eval(localStorage.getItem("display"));
-      screenDisplay.value = Function("return " + inputData)(); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
-      displaylocalStorageSTORE();
+    if (inputData != null) {
+      //when inputdata and screendisplay value are same
+      if (inputData == screenDisplay.value) {
+        //when local storage has some value
+        displaylocalStorageREMOVE();
+        // screenDisplay.value = eval(localStorage.getItem("display"));
+        screenDisplay.value = Function("return " + inputData)(); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+        displaylocalStorageSTORE();
+      } else {
+        //when inputdata and screendisplay value are not same
+        displaylocalStorageREMOVE();
+        screenDisplay.value = Function("return " + screenDisplay.value)();
+        displaylocalStorageSTORE();
+      }
     } else {
-      //when inputdata and screendisplay value are not same
-      displaylocalStorageREMOVE();
+      //when local storage is empty
       screenDisplay.value = Function("return " + screenDisplay.value)();
       displaylocalStorageSTORE();
     }
-  } else {
-    //when local storage is empty
-    screenDisplay.value = Function("return " + screenDisplay.value)();
-    displaylocalStorageSTORE();
+  } catch (error) {
+    console.log(error);
+    //! Alerts the input error
+    swal("Invalid Input!", "Please Check Your Input Again", "error");
   }
 };
+
 //this function gives focus to input field and places cusrsor at the very end of the input field when input field has value in it and its cursor is at the very beginning due to previous deletion
 //it is needed cause when the screen gets focused out then due to previous deletion the cursor may stay at the very first point which makes delete button funciton obsolete
 const focusInitiate = () => {

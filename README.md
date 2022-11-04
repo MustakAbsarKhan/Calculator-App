@@ -16,7 +16,9 @@
 - **Collection of Themes** - On the popular Demand, three different types of themes and modes are made available
 - **Storage Reserve** - User's Preferred Theme, Calculations and Inputs will remain **_unlost_** even after reload or restart
 - **Quick Reset** - Clicking Twice on any toggle button will instantly reset all the stored data
+- **No Double Trouble** - Back to Back similar problem causing inputs [`.,+,-,x,/`] will be filtered
 - **Flexible Edit** - Any number and at any position delete or number modification can be done
+- **Error Handling** - Any Detected Error will be caught and displayed in Console and Invalid Input error will be displayed using **_Sweet Alert_**.
   <br>
 
 ### Built with
@@ -24,6 +26,7 @@
 - [HTML5](https://html.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [JavaScript ES6](http://es6-features.org/)
+- [Sweet Alert](https://sweetalert.js.org/)
 - [Frontend Mentor-Design](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29)
 
 ### Screenshot
@@ -33,10 +36,18 @@
 ![](./src/images/theme1-mobile.png)
 ![](./src/images/theme2-mobile.png)
 ![](./src/images/theme3-mobile.png)
+![](./src/images/mobile-error-handle.png)
+
 <br>
+
 ![](./src/images/theme1-lgscreen.png)
+
 ![](./src/images/theme2-lgscreen.png)
+
 ![](./src/images/theme3-lgscreen.png)
+
+![](./src/images/desktop-error%20handle.png)
+
 <br>
 <br>
 
