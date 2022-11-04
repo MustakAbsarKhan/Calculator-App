@@ -10,6 +10,7 @@
 
 ## Features that make it comparatively more handy and efficacious
 
+- **BODMASS** - Follows **_Bracket, Order, Division, Multiplication, Addition, and Subtraction_** (**BODMAS**) Math rule
 - **Simplistic Responsive Design** - Only those features are there which a user would mostly need
 - **Tight Security** - The best possible alternative of **_notorious_** `eval()` is used here
 - **OS Theme Preference** - User's OS Theme preference is respected at user's initial visit
@@ -17,8 +18,9 @@
 - **Storage Reserve** - User's Preferred Theme, Calculations and Inputs will remain **_unlost_** even after reload or restart
 - **Quick Reset** - Clicking Twice on any toggle button will instantly reset all the stored data
 - **No Double Trouble** - Back to Back similar problem causing inputs [`.,+,-,x,/`] will be filtered
-- **Flexible Edit** - Any number and at any position delete or number modification can be done
-- **Error Handling** - Any Detected Error will be caught and displayed in Console and Invalid Input error will be displayed using **_Sweet Alert_**.
+- **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and needed infront of `(`
+- **Flexible Edit** - Any number and at any position delete or number modification can be done by using direct **device keyboard**
+- **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
   <br>
 
 ### Built with
