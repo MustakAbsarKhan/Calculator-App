@@ -21,6 +21,7 @@ function input(x) {
   const screendataArray = [...screenDisplay.value];
   const lastDisplayItem = screendataArray[screendataArray.length - 1];
 
+  // * Double Trouble FEATURE - Removes Duplicate Operator and Makes Working With (.,+,-,*,/) more flexible
   if (
     [".", "+", "-", "*", "/"].includes(x) &&
     (lastDisplayItem == "+" ||
