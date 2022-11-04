@@ -48,7 +48,7 @@
             <input type="text" class="theme2-screeninputSTYLE dark:theme3-screeninputSTYLE w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="" inputmode="none">
         </screen>
         <keypad id="keypad-selector" class="theme2-keypadStyle dark:theme3-keypadStyle h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
-            <input class="button theme2-btn dark:theme3-btn" type="button" value="7" onclick="input('7')" id="dot-btn">
+            <input class="button theme2-btn dark:theme3-btn" type="button" value="7" onclick="input('7')">
             <input class="button theme2-btn dark:theme3-btn" type="button" value="8" onclick="input('8')">    
             <input class="button theme2-btn dark:theme3-btn" type="button" value="9" onclick="input('9')">    
             <input class="umd:pt-1.5 umd1:pt-2 text-2xl big-button theme2-big-button dark:theme3-big-button" type="button" value="DEL" onclick="del()">    
@@ -69,7 +69,7 @@
             <input class="button theme2-btn dark:theme3-btn" type="button" value="x" onclick="input('*')">  
 
             <input class="big-button theme2-big-button dark:theme3-big-button" type="button" value="R" onclick="reset()">
-            <input class="pt-[0.15rem] llg:pt-1 text-3xl button theme2-btn dark:theme3-btn" type="button" value="( )" onclick="">
+            <input class="pt-[0.15rem] llg:pt-1 text-3xl button theme2-btn dark:theme3-btn" type="button" value="( )" onclick="bracket()">
             <input class="big-button big-button-equal theme2-big-red-button dark:theme3-big-red-button col-span-2" type="button" value="=" onclick="result()">
         </keypad>
     </main>

@@ -1,5 +1,4 @@
 const screenDisplay = document.getElementById("screen-input-selector");
-const dotbtnSelector = document.getElementById("dot-btn");
 
 //Stores data in the local storage
 const displaylocalStorageSTORE = () => {
@@ -34,11 +33,58 @@ function input(x) {
     del();
     screenDisplay.value += x;
     displaylocalStorageSTORE();
-    console.log("there is any restricted element at the end");
   } else {
     screenDisplay.value += x;
     displaylocalStorageSTORE();
-    console.log("Else Running");
+  }
+}
+
+const bracketOpen = () => {
+  localStorage.setItem("bracket", "(");
+};
+
+const bracketClose = () => {
+  localStorage.setItem("bracket", ")");
+};
+
+const bracketRemove = () => {
+  localStorage.removeItem("bracket");
+};
+
+function bracket() {
+  const screendataArray = [...screenDisplay.value];
+  //inserts * if math operator is missing and bracket is closed or there is not any recorded bracket
+  if (
+    (localStorage.getItem("bracket") == ")" ||
+      localStorage.getItem("bracket") == null) &&
+    !["+", "-", "*", "/"].includes(
+      screendataArray[screendataArray.length - 1]
+    ) &&
+    screendataArray.length != 0
+  ) {
+    screenDisplay.value += "*";
+    displaylocalStorageSTORE();
+  }
+
+  //inserts bracket
+  if (
+    screendataArray.length == 0 ||
+    localStorage.getItem("bracket") == ")" ||
+    localStorage.getItem("bracket") == null
+  ) {
+    //open
+    //when empty
+    //when bracket closed
+    //when bracket memory is null
+    screenDisplay.value += "(";
+    bracketOpen();
+    displaylocalStorageSTORE();
+  } else if (localStorage.getItem("bracket") == "(") {
+    //closed
+    //when bracket is open
+    screenDisplay.value += ")";
+    bracketClose();
+    displaylocalStorageSTORE();
   }
 }
 
@@ -123,5 +169,6 @@ const del = () => {
 
 const reset = () => {
   displaylocalStorageREMOVE();
+  bracketRemove();
   screenDisplay.value = "";
 };
