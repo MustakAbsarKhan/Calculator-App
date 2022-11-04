@@ -846,8 +846,8 @@ video {
   border-bottom-width: 4px;
   padding-top: 0.5rem;
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   letter-spacing: 0.025em;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
@@ -869,7 +869,7 @@ video {
   .big-button {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
-    padding-top: .40rem;
+    padding-top: 0.5rem;
   }
 }
 
@@ -1352,6 +1352,10 @@ video {
   padding-right: 0.25rem;
 }
 
+.pt-\[0\.15rem\] {
+  padding-top: 0.15rem;
+}
+
 .text-right {
   text-align: right;
 }
@@ -1378,6 +1382,16 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -1484,4 +1498,36 @@ video {
 .dark .dark\:theme3-big-red-button:active {
   --tw-bg-opacity: 1;
   background-color: rgb(147 252 248 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 400px) {
+  .umd\:pt-1\.5 {
+    padding-top: 0.375rem;
+  }
+
+  .umd\:pt-1 {
+    padding-top: 0.25rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .umd1\:pt-2 {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 1010px) {
+  .llg\:pt-1 {
+    padding-top: 0.25rem;
+  }
+}
+
+@media (min-width: 1279px) {
+  .sxl\:pt-2\.5 {
+    padding-top: 0.625rem;
+  }
+
+  .sxl\:pt-2 {
+    padding-top: 0.5rem;
+  }
 };
