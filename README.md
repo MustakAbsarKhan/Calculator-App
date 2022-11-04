@@ -19,6 +19,7 @@
 - **Quick Reset** - Clicking Twice on any toggle button will instantly reset all the stored data
 - **No Double Trouble** - Back to Back similar problem causing inputs [`.,+,-,x,/`] will be filtered
 - **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and needed infront of `(`
+- **Device Keyboard Toggle** - **Double Tapping** on the calculator screen would **`Enable/Disable`** the built in direct device keyboard (**`Default: Disabled` Recommended**)
 - **Flexible Edit** - Any number and at any position delete or number modification can be done by using direct **device keyboard**
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
   <br>
