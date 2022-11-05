@@ -18,9 +18,9 @@
 - **Storage Reserve** - User's Preferred Theme, Calculations and Inputs will remain **_unlost_** even after reload or restart
 - **Quick Reset** - Clicking Twice on any toggle button will instantly reset all the stored data
 - **No Double Trouble** - Back to Back similar problem causing inputs [`.,+,-,x,/`] will be filtered
-- **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and needed infront of `(`
+- **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and does the needful
 - **Device Keyboard Toggle** - **Double Tapping** on the calculator screen would **`Enable/Disable`** the built in direct device keyboard (**`Default: Disabled` Recommended**)
-- **Flexible Edit** - Any number and at any position delete or number modification can be done by using direct **device keyboard**
+- **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen [**`Selection`**] and pressing the **Calc Buttons** or direct **device keyboard [`Edit or Modification`]**. `[You Can Enable your device's numeric keyboard by double tapping the result screen of the Calc]`
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
   <br>
 
