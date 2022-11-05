@@ -88,19 +88,15 @@ const customInput = (input, screenPosition) => {
   if ([".", "+", "-", "*", "/"].includes(currentarray[screenPosition - 1])) {
     if (screenPosition >= 1) {
       let screenDataArray = [...screenDisplay.value];
-
       //selects and stores the very first portion of the text
-      let remainingDataFirstPortion = screenDataArray.slice(
-        0,
-        screenPosition - 1
-      ); //selects and stores the rest of the portion of the text after cursor
-
+      let remainingDataFirstPortion = screenDataArray.slice(0, screenPosition); //selects and stores the rest of the portion of the text after cursor
       let remainingDataLastPortion = screenDataArray.slice(
         screenPosition,
         screenDataArray.length
       );
 
       const clearedArray = remainingDataFirstPortion.concat(input);
+
       const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
 
       screenDisplay.value = clearedArray1.join("");
