@@ -345,7 +345,7 @@ const result = () => {
 
       if (
         screenItems.length != indexno &&
-        !["+", "-", "*", "/"].includes(screenItems[index + 1]) &&
+        ![")", "+", "-", "*", "/"].includes(screenItems[index + 1]) &&
         item == ")"
       ) {
         let remainingDataFirstPortion = screenItems.slice(0, index + 1); //selects and stores the rest of the portion of the text after cursor
