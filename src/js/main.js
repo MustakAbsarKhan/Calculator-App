@@ -342,14 +342,19 @@ function bracket() {
 const result = () => {
   focusInitiate();
   try {
+    // * auto multiplication feature
+
     displaylocalStorageDATA();
     const screenItems = [...screenDisplay.value];
     let screenPosition = screenDisplay.selectionStart;
 
     screenItems.forEach((item, index) => {
+      let indexno = index + 1;
+
       if (
-        item == ")" &&
-        !["+", "-", "*", "/"].includes(screenItems[index + 1])
+        screenItems.length != indexno &&
+        !["+", "-", "*", "/"].includes(screenItems[index + 1]) &&
+        item == ")"
       ) {
         let remainingDataFirstPortion = screenItems.slice(0, index + 1); //selects and stores the rest of the portion of the text after cursor
 
