@@ -27,41 +27,6 @@ const bracketRemove = () => {
   localStorage.removeItem("bracket");
 };
 
-//calculates the result on click on the (=) button using Function constructor
-const result = () => {
-  try {
-    const inputData = localStorage.getItem("display");
-
-    if (inputData != null) {
-      //when inputdata and screendisplay value are same
-      if (inputData == screenDisplay.value) {
-        //when local storage has some value
-        displaylocalStorageREMOVE();
-        // screenDisplay.value = eval(localStorage.getItem("display"));
-        screenDisplay.value = Function("return " + inputData)().toFixed(4); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
-        displaylocalStorageSTORE();
-      } else {
-        //when inputdata and screendisplay value are not same
-        displaylocalStorageREMOVE();
-        screenDisplay.value = Function(
-          "return " + screenDisplay.value
-        )().toFixed(4);
-        displaylocalStorageSTORE();
-      }
-    } else {
-      //when local storage is empty
-      screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
-        4
-      );
-      displaylocalStorageSTORE();
-    }
-  } catch (error) {
-    console.log(error);
-    //! Alerts the input error
-    swal("Invalid Input!", "Please Check Your Input Again", "error");
-  }
-};
-
 //this function gives focus to input field and places cusrsor at the very end of the input field when input field has value in it and its cursor is at the very beginning due to previous deletion
 //it is needed cause when the screen gets focused out then due to previous deletion the cursor may stay at the very first point which makes delete button funciton obsolete
 const focusInitiate = () => {
@@ -301,6 +266,27 @@ const customBracketInitiate = () => {
       screenDisplay.setSelectionRange(screenPosition, screenPosition);
     } else if (
       localStorage.getItem("bracket") == "(" &&
+      screendataArray.length != screenPosition &&
+      !["+", "-", "*", "/"].includes(screendataArray[screenPosition])
+    ) {
+      //selects and stores the very first portion of the text
+      let remainingDataFirstPortion = screendataArray.slice(0, screenPosition);
+      //selects and stores the rest of the portion of the text after cursor
+      let remainingDataLastPortion = screendataArray.slice(
+        screenPosition,
+        screendataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat(")*");
+
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+      displaylocalStorageSTORE();
+      bracketClose();
+      screenDisplay.setSelectionRange(screenPosition, screenPosition);
+    } else if (
+      localStorage.getItem("bracket") == "(" &&
       screendataArray.length != screenPosition
     ) {
       //selects and stores the very first portion of the text
@@ -355,3 +341,65 @@ function bracket() {
 
   screenDisplay.blur();
 }
+
+//calculates the result on click on the (=) button using Function constructor
+const result = () => {
+  focusInitiate();
+  try {
+    displaylocalStorageDATA();
+    const screenItems = [...screenDisplay.value];
+    let screenPosition = screenDisplay.selectionStart;
+
+    screenItems.forEach((item, index) => {
+      if (
+        item == ")" &&
+        !["+", "-", "*", "/"].includes(screenItems[index + 1])
+      ) {
+        let remainingDataFirstPortion = screenItems.slice(0, index + 1); //selects and stores the rest of the portion of the text after cursor
+
+        let remainingDataLastPortion = screenItems.slice(
+          index + 1,
+          screenItems.length
+        );
+
+        const clearedArray = remainingDataFirstPortion.concat("*");
+        const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+        screenDisplay.value = clearedArray1.join("");
+        displaylocalStorageSTORE();
+        screenDisplay.setSelectionRange(screenPosition, screenPosition);
+      }
+    });
+
+    const inputData = localStorage.getItem("display");
+
+    if (inputData != null) {
+      //when inputdata and screendisplay value are same
+      if (inputData == screenDisplay.value) {
+        //when local storage has some value
+        displaylocalStorageREMOVE();
+        // screenDisplay.value = eval(localStorage.getItem("display"));
+        screenDisplay.value = Function("return " + inputData)().toFixed(4); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+        displaylocalStorageSTORE();
+      } else {
+        //when inputdata and screendisplay value are not same
+        displaylocalStorageREMOVE();
+        screenDisplay.value = Function(
+          "return " + screenDisplay.value
+        )().toFixed(4);
+        displaylocalStorageSTORE();
+      }
+    } else {
+      //when local storage is empty
+      screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
+        4
+      );
+      displaylocalStorageSTORE();
+    }
+  } catch (error) {
+    console.log(error);
+    //! Alerts the input error
+    swal("Invalid Input!", "Please Check Your Input Again", "error");
+  }
+  screenDisplay.blur();
+};
