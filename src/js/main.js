@@ -15,30 +15,6 @@ const displaylocalStorageDATA = () => {
   screenDisplay.value = localStorage.getItem("display");
 };
 
-//takes and records(in the local storage) all the inputs from the user and displays it on the input screen
-function input(x) {
-  const screendataArray = [...screenDisplay.value];
-  const lastDisplayItem = screendataArray[screendataArray.length - 1];
-
-  // * Double Trouble FEATURE - Removes Duplicate Operator and Makes Working With (.,+,-,*,/) more flexible
-  if (
-    [".", "+", "-", "*", "/"].includes(x) &&
-    (lastDisplayItem == "+" ||
-      lastDisplayItem == "-" ||
-      lastDisplayItem == "*" ||
-      lastDisplayItem == "/" ||
-      lastDisplayItem == ".")
-  ) {
-    console.log(lastDisplayItem);
-    del();
-    screenDisplay.value += x;
-    displaylocalStorageSTORE();
-  } else {
-    screenDisplay.value += x;
-    displaylocalStorageSTORE();
-  }
-}
-
 const bracketOpen = () => {
   localStorage.setItem("bracket", "(");
 };
@@ -50,47 +26,6 @@ const bracketClose = () => {
 const bracketRemove = () => {
   localStorage.removeItem("bracket");
 };
-
-function bracket() {
-  const screendataArray = [...screenDisplay.value];
-  //inserts * if math operator is missing and bracket is closed or there is not any recorded bracket
-  if (
-    (localStorage.getItem("bracket") == ")" ||
-      localStorage.getItem("bracket") == null) &&
-    !["+", "-", "*", "/"].includes(
-      screendataArray[screendataArray.length - 1]
-    ) &&
-    screendataArray.length != 0
-  ) {
-    screenDisplay.value += "*";
-    displaylocalStorageSTORE();
-  }
-
-  //inserts bracket
-  if (
-    screendataArray.length == 0 ||
-    localStorage.getItem("bracket") == ")" ||
-    localStorage.getItem("bracket") == null
-  ) {
-    //open
-    //when empty
-    //when bracket closed
-    //when bracket memory is null
-    screenDisplay.value += "(";
-    bracketOpen();
-    displaylocalStorageSTORE();
-  } else if (localStorage.getItem("bracket") == "(") {
-    //closed
-    //when bracket is open
-    screenDisplay.value += ")";
-    bracketClose();
-    displaylocalStorageSTORE();
-  } else {
-    //! Alerts the input error
-    swal("Invalid Input!", "Please Check Your Input Again", "error");
-    console.log("Bracket Position Error");
-  }
-}
 
 //calculates the result on click on the (=) button using Function constructor
 const result = () => {
@@ -160,6 +95,7 @@ const deleteFeature = () => {
         remainingDataLastPortion
       );
       screenDisplay.value = clearedArray.join("");
+
       displaylocalStorageSTORE();
       screenDisplay.setSelectionRange(screenPosition - 1, screenPosition - 1);
     }
@@ -180,3 +116,242 @@ const reset = () => {
   bracketRemove();
   screenDisplay.value = "";
 };
+
+const customInput = (input, screenPosition) => {
+  const currentarray = [...screenDisplay.value];
+
+  if ([".", "+", "-", "*", "/"].includes(currentarray[screenPosition - 1])) {
+    if (screenPosition >= 1) {
+      let screenDataArray = [...screenDisplay.value];
+
+      //selects and stores the very first portion of the text
+      let remainingDataFirstPortion = screenDataArray.slice(
+        0,
+        screenPosition - 1
+      ); //selects and stores the rest of the portion of the text after cursor
+
+      let remainingDataLastPortion = screenDataArray.slice(
+        screenPosition,
+        screenDataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat(input);
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+      displaylocalStorageSTORE();
+      screenDisplay.setSelectionRange(screenPosition, screenPosition);
+    }
+  } else {
+    if (screenPosition >= 1) {
+      let screenDataArray = [...screenDisplay.value];
+
+      //selects and stores the very first portion of the text
+      let remainingDataFirstPortion = screenDataArray.slice(0, screenPosition); //selects and stores the rest of the portion of the text after cursor
+      let remainingDataLastPortion = screenDataArray.slice(
+        screenPosition,
+        screenDataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat(input);
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+      displaylocalStorageSTORE();
+      screenDisplay.setSelectionRange(screenPosition + 1, screenPosition + 1);
+    }
+  }
+};
+
+//takes and records(in the local storage) all the inputs from the user and displays it on the input screen
+function input(x) {
+  screenDisplay.focus(); //this focus function is used to keep the cursor at its place after selecting the mouse pointer position and deleting manually
+  focusInitiate();
+
+  let screenPosition = screenDisplay.selectionStart;
+  let visbleDataArray = [...screenDisplay.value];
+
+  if (visbleDataArray.length != screenPosition) {
+    customInput(x, screenPosition);
+  } else {
+    const screendataArray = [...screenDisplay.value];
+    const lastDisplayItem = screendataArray[screendataArray.length - 1];
+
+    // * Double Trouble FEATURE - Removes Duplicate Operator and Makes Working With (.,+,-,*,/) more flexible
+    if (
+      [".", "+", "-", "*", "/"].includes(x) &&
+      (lastDisplayItem == "+" ||
+        lastDisplayItem == "-" ||
+        lastDisplayItem == "*" ||
+        lastDisplayItem == "/" ||
+        lastDisplayItem == ".")
+    ) {
+      del();
+      screenDisplay.value += x;
+      displaylocalStorageSTORE();
+    } else {
+      screenDisplay.value += x;
+      displaylocalStorageSTORE();
+    }
+  }
+  screenDisplay.blur();
+}
+
+//processes bracket input function
+const bracketInitiate = () => {
+  const screendataArray = [...screenDisplay.value];
+
+  //inserts * if math operator is missing and bracket is closed or there is not any recorded bracket
+  if (
+    (localStorage.getItem("bracket") == ")" ||
+      localStorage.getItem("bracket") == null) &&
+    !["+", "-", "*", "/"].includes(
+      screendataArray[screendataArray.length - 1]
+    ) &&
+    screendataArray.length != 0
+  ) {
+    screenDisplay.value += "*";
+    displaylocalStorageSTORE();
+  }
+
+  //inserts bracket
+  if (
+    screendataArray.length == 0 ||
+    localStorage.getItem("bracket") == ")" ||
+    localStorage.getItem("bracket") == null
+  ) {
+    //open
+    //when empty
+    //when bracket closed
+    //when bracket memory is null
+    screenDisplay.value += "(";
+    bracketOpen();
+    displaylocalStorageSTORE();
+  } else if (localStorage.getItem("bracket") == "(") {
+    //closed
+    //when bracket is open
+    screenDisplay.value += ")";
+    bracketClose();
+    displaylocalStorageSTORE();
+  } else {
+    //! Alerts the input error
+    swal("Invalid Input!", "Please Check Your Input Again", "error");
+    console.log("Bracket Position Error");
+  }
+};
+
+//custom
+const customBracketInitiate = () => {
+  const starSet = () => {
+    const screendataArray = [...screenDisplay.value];
+    const screenPosition = screenDisplay.selectionStart;
+
+    //inserts * if math operator is missing and bracket is closed or there is not any recorded bracket
+    if (
+      (localStorage.getItem("bracket") == ")" ||
+        localStorage.getItem("bracket") == null) &&
+      !["+", "-", "*", "/"].includes(screendataArray[screenPosition - 1]) &&
+      screendataArray.length != 0 &&
+      screenPosition != 0
+    ) {
+      //selects and stores the very first portion of the text
+      let remainingDataFirstPortion = screendataArray.slice(0, screenPosition);
+
+      //selects and stores the rest of the portion of the text after cursor
+      let remainingDataLastPortion = screendataArray.slice(
+        screenPosition,
+        screendataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat("*");
+
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+
+      displaylocalStorageSTORE();
+      screenDisplay.setSelectionRange(screenPosition + 1, screenPosition + 1);
+    }
+  };
+
+  const customBracketPosition = () => {
+    const screendataArray = [...screenDisplay.value];
+    const screenPosition = screenDisplay.selectionStart;
+
+    if (
+      (screendataArray.length != screenPosition &&
+        localStorage.getItem("bracket") == ")") ||
+      localStorage.getItem("bracket") == null
+    ) {
+      //selects and stores the very first portion of the text
+      let remainingDataFirstPortion = screendataArray.slice(0, screenPosition);
+      //selects and stores the rest of the portion of the text after cursor
+      let remainingDataLastPortion = screendataArray.slice(
+        screenPosition,
+        screendataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat("(");
+
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+      displaylocalStorageSTORE();
+      bracketOpen();
+      screenDisplay.setSelectionRange(screenPosition, screenPosition);
+    } else if (
+      localStorage.getItem("bracket") == "(" &&
+      screendataArray.length != screenPosition
+    ) {
+      //selects and stores the very first portion of the text
+      let remainingDataFirstPortion = screendataArray.slice(0, screenPosition);
+      //selects and stores the rest of the portion of the text after cursor
+      let remainingDataLastPortion = screendataArray.slice(
+        screenPosition,
+        screendataArray.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat(")");
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+      displaylocalStorageSTORE();
+      bracketClose();
+      screenDisplay.setSelectionRange(screenPosition, screenPosition);
+    }
+  };
+
+  starSet();
+  customBracketPosition();
+};
+
+const dataSlice = (screendataArray, screenPosition, input) => {
+  //selects and stores the very first portion of the text
+  let remainingDataFirstPortion = screendataArray.slice(0, screenPosition);
+  //selects and stores the rest of the portion of the text after cursor
+  let remainingDataLastPortion = screendataArray.slice(
+    screenPosition,
+    screendataArray.length
+  );
+  const clearedArray = remainingDataFirstPortion.concat(input);
+  const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+  screenDisplay.value = clearedArray1.join("");
+};
+
+//inputs bracket
+function bracket() {
+  let screenPosition = screenDisplay.selectionStart;
+  let visbleDataArray = [...screenDisplay.value];
+
+  if (visbleDataArray.length == screenPosition) {
+    screenDisplay.focus(); //this focus function is used to keep the cursor at its place after selecting the mouse pointer position and deleting manually
+    focusInitiate();
+
+    bracketInitiate();
+  } else {
+    customBracketInitiate();
+  }
+
+  screenDisplay.blur();
+}
