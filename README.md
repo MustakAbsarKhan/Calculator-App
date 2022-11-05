@@ -24,6 +24,8 @@
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
   <br>
 
+![](https://i.imgur.com/waxVImv.png)
+
 ### Built with
 
 - [HTML5](https://html.com/)
@@ -32,27 +34,31 @@
 - [Sweet Alert](https://sweetalert.js.org/)
 - [Frontend Mentor-Design](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29)
 
+![](https://i.imgur.com/waxVImv.png)
+
 ### Screenshot
 
 <div align="center">
 
-![](./src/images/theme1-mobile.png)
-![](./src/images/theme2-mobile.png)
-![](./src/images/theme3-mobile.png)
-![](./src/images/mobile-error-handle.png)
+![](./src/images/t1-mob.png)
+![](./src/images/t2-mob.png)
+![](./src/images/t3-mob.png)
+![](./src/images/t2-mobile-error-handle.png)
 
 <br>
 
-![](./src/images/theme1-lgscreen.png)
+![](./src/images/t1-Desktop.png)
 
-![](./src/images/theme2-lgscreen.png)
+![](./src/images/t2-Desktop.png)
 
-![](./src/images/theme3-lgscreen.png)
+![](./src/images/t3-Desktop.png)
 
-![](./src/images/desktop-error%20handle.png)
+![](./src/images/t2-desktop-error-handle.png)
 
 <br>
 <br>
+
+![](https://i.imgur.com/waxVImv.png)
 
 **Developed By `Mohammad Mustak Absar Khan`**
 
