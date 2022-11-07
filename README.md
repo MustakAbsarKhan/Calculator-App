@@ -1,6 +1,7 @@
 # Calculator- App V1.0
 
 [![npm version](https://badge.fury.io/js/tailwindcss.svg)](https://badge.fury.io/js/tailwindcss)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/sweetalert/badge)](https://www.jsdelivr.com/package/npm/sweetalert)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/25dfe686-bd1c-4483-b9b7-d94a796b7265/deploy-status)](https://app.netlify.com/sites/calc-mustak/deploys)
 <br>
 
@@ -29,9 +30,9 @@
 ### Built with
 
 - [HTML5](https://html.com/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [TailwindCSS <sub>v3.2.1</sub>](https://tailwindcss.com/)
 - [JavaScript ES6](http://es6-features.org/)
-- [Sweet Alert](https://sweetalert.js.org/)
+- [Sweet Alert <sub>v2.1.2</sub>](https://sweetalert.js.org/)
 - [Frontend Mentor-Design](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29)
 
 ![](https://i.imgur.com/waxVImv.png)
