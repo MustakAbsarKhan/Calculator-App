@@ -146,13 +146,17 @@ function input(x) {
 
     // * Double Trouble FEATURE - Removes Duplicate Operator and Makes Working With (.,+,-,*,/) more flexible
     if (
-      [".", "+", "-", "*", "/"].includes(x) &&
+      ["+", "-", "*", "/"].includes(x) &&
       (lastDisplayItem == "+" ||
         lastDisplayItem == "-" ||
         lastDisplayItem == "*" ||
-        lastDisplayItem == "/" ||
-        lastDisplayItem == ".")
+        lastDisplayItem == "/") &&
+      lastDisplayItem != "."
     ) {
+      del();
+      screenDisplay.value += x;
+      displaylocalStorageSTORE();
+    } else if (["."].includes(x) && lastDisplayItem == ".") {
       del();
       screenDisplay.value += x;
       displaylocalStorageSTORE();
