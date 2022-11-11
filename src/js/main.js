@@ -206,7 +206,7 @@ const bracketInitiate = () => {
     console.log("Bracket Position Error");
   }
 };
-
+// * Input Related Functions
 //custom
 const customBracketInitiate = () => {
   const starSet = () => {
@@ -330,65 +330,76 @@ function bracket() {
   screenDisplay.blur();
 }
 
+// * Result/Final Calculation related function
+
+//adds multiplication sign where needed and helps the calculation process
+const autoMultiply = () => {
+  // * auto multiplication feature
+  const screenItems = [...screenDisplay.value];
+  let screenPosition = screenDisplay.selectionStart;
+
+  screenItems.forEach((item, index) => {
+    let indexno = index + 1;
+
+    if (
+      screenItems.length != indexno &&
+      ![")", "+", "-", "*", "/"].includes(screenItems[index + 1]) &&
+      item == ")"
+    ) {
+      let remainingDataFirstPortion = screenItems.slice(0, index + 1); //selects and stores the rest of the portion of the text after cursor
+
+      let remainingDataLastPortion = screenItems.slice(
+        index + 1,
+        screenItems.length
+      );
+
+      const clearedArray = remainingDataFirstPortion.concat("*");
+      const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
+
+      screenDisplay.value = clearedArray1.join("");
+      displaylocalStorageSTORE();
+      screenDisplay.setSelectionRange(screenPosition, screenPosition);
+    } else {
+      return;
+    }
+  });
+};
+
+//this function calculates the value
+const CalcFun = () => {
+  const inputData = localStorage.getItem("display");
+
+  if (inputData != null) {
+    //when inputdata and screendisplay value are same
+    if (inputData == screenDisplay.value) {
+      //when local storage has some value
+      displaylocalStorageREMOVE();
+      // screenDisplay.value = eval(localStorage.getItem("display"));
+      screenDisplay.value = Function("return " + inputData)().toFixed(2); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+      displaylocalStorageSTORE();
+    } else {
+      //when inputdata and screendisplay value are not same
+      displaylocalStorageREMOVE();
+      screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
+        2
+      );
+      displaylocalStorageSTORE();
+    }
+  } else {
+    //when local storage is empty
+    screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
+      2
+    );
+    displaylocalStorageSTORE();
+  }
+};
+
 //calculates the result on click on the (=) button using Function constructor
 const result = () => {
   focusInitiate();
   try {
-    // * auto multiplication feature
-
-    displaylocalStorageDATA();
-    const screenItems = [...screenDisplay.value];
-    let screenPosition = screenDisplay.selectionStart;
-
-    screenItems.forEach((item, index) => {
-      let indexno = index + 1;
-
-      if (
-        screenItems.length != indexno &&
-        ![")", "+", "-", "*", "/"].includes(screenItems[index + 1]) &&
-        item == ")"
-      ) {
-        let remainingDataFirstPortion = screenItems.slice(0, index + 1); //selects and stores the rest of the portion of the text after cursor
-
-        let remainingDataLastPortion = screenItems.slice(
-          index + 1,
-          screenItems.length
-        );
-
-        const clearedArray = remainingDataFirstPortion.concat("*");
-        const clearedArray1 = clearedArray.concat(remainingDataLastPortion);
-
-        screenDisplay.value = clearedArray1.join("");
-        displaylocalStorageSTORE();
-        screenDisplay.setSelectionRange(screenPosition, screenPosition);
-      }
-    });
-
-    const inputData = localStorage.getItem("display");
-
-    if (inputData != null) {
-      //when inputdata and screendisplay value are same
-      if (inputData == screenDisplay.value) {
-        //when local storage has some value
-        displaylocalStorageREMOVE();
-        // screenDisplay.value = eval(localStorage.getItem("display"));
-        screenDisplay.value = Function("return " + inputData)().toFixed(4); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
-        displaylocalStorageSTORE();
-      } else {
-        //when inputdata and screendisplay value are not same
-        displaylocalStorageREMOVE();
-        screenDisplay.value = Function(
-          "return " + screenDisplay.value
-        )().toFixed(4);
-        displaylocalStorageSTORE();
-      }
-    } else {
-      //when local storage is empty
-      screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
-        4
-      );
-      displaylocalStorageSTORE();
-    }
+    autoMultiply();
+    CalcFun();
   } catch (error) {
     console.log(error);
     //! Alerts the input error
