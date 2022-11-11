@@ -365,6 +365,13 @@ const autoMultiply = () => {
   });
 };
 
+//it is used to minimize the calculation complexity and to control the number of decimles
+const calcMain = (x) => {
+  const calculatedValue = Number(Function("return " + x)().toPrecision(4)); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+
+  screenDisplay.value = calculatedValue; //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+};
+
 //this function calculates the value
 const CalcFun = () => {
   const inputData = localStorage.getItem("display");
@@ -375,21 +382,22 @@ const CalcFun = () => {
       //when local storage has some value
       displaylocalStorageREMOVE();
       // screenDisplay.value = eval(localStorage.getItem("display"));
-      screenDisplay.value = Function("return " + inputData)().toFixed(2); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
+      calcMain(inputData);
+      // screenDisplay.value = Function("return " + inputData)().toFixed(2); //using function constructor instead of EVAL function cause EVAL() executes the code it's passed with the privileges of the caller
       displaylocalStorageSTORE();
     } else {
       //when inputdata and screendisplay value are not same
       displaylocalStorageREMOVE();
-      screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
-        2
-      );
+      // screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(2);
+      calcMain(screenDisplay.value);
+
       displaylocalStorageSTORE();
     }
   } else {
     //when local storage is empty
-    screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(
-      2
-    );
+    // screenDisplay.value = Function("return " + screenDisplay.value)().toFixed(2);
+    calcMain(screenDisplay.value);
+
     displaylocalStorageSTORE();
   }
 };
