@@ -210,9 +210,11 @@ const bracketInitiate = () => {
     console.log("Bracket Position Error");
   }
 };
+
 // * Input Related Functions
 //custom
 const customBracketInitiate = () => {
+  //multiply when there is not mathmatical operator
   const starSet = () => {
     const screendataArray = [...screenDisplay.value];
     const screenPosition = screenDisplay.selectionStart;
@@ -379,7 +381,6 @@ const calcMain = (x) => {
 //this function calculates the value
 const CalcFun = () => {
   const inputData = localStorage.getItem("display");
-
   if (inputData != null) {
     //when inputdata and screendisplay value are same
     if (inputData == screenDisplay.value) {
