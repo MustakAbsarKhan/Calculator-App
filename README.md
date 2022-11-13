@@ -11,18 +11,18 @@
 
 ## Features that make it comparatively more handy and efficacious
 
-- **BODMASS** - Follows **_Bracket, Order, Division, Multiplication, Addition, and Subtraction_** (**BODMAS**) Math rule
+- **BODMAS** - Follows **_Bracket, Order, Division, Multiplication, Addition, and Subtraction_** (**BODMAS**) Math rule
 - **Simplistic Responsive Design** - Only those features are there which a user would mostly need
 - **Tight Security** - The best possible alternative of **_notorious_** `eval()` is used here
-- **OS Theme Preference** - User's OS Theme preference is respected at user's initial visit
+- **OS Theme Preference** - User's OS Theme preference is respected at the user's initial visit
 - **Collection of Themes** - On the popular Demand, three different types of themes and modes are made available
-- **Storage Reserve** - User's Preferred Theme, Calculations and Inputs will remain **_unlost_** even after reload or restart
+- **Storage Reserve** - The User's Preferred Theme, Calculations and Inputs will remain **_unlost_** even after reload or restart
 - **Quick Reset** - Clicking Twice on any toggle button will instantly reset all the stored data
 - **No Double Trouble** - Back to Back similar problem causing inputs [`.,+,-,x,/`] will be filtered
 - **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and does the needful
 - **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen.
-- **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
-- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futeristic designs and features. [Click Here](https://raw.githubusercontent.com/MustakAbsarKhan/Calculator-App/main/APK%20File/Calculator_Dev_by_Mustak.apk) to Download.
+- **Error Handling** - Any Detected Error will be caught and displayed in `Console,` and an Invalid Input error will be displayed using **_Sweet Alert_**
+- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futuristic designs and features. [Click Here](https://raw.githubusercontent.com/MustakAbsarKhan/Calculator-App/main/APK%20File/Calculator_Dev_by_Mustak.apk) to Download.
 
   <br>
 

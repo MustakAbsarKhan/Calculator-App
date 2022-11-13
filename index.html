@@ -18,7 +18,7 @@
 
 <body class="theme2-body dark:theme3-body font-sans flex justify-center items-center h-[100vh]" id="body-selector">
     <main class="flex flex-col justify-center items-center min-w-[25%] h-[70%] min-h-[400px] max-h-[1080px] m-6">
-        <topbar class="w-full h-[10%] px-1 my-2 flex items-center justify-center">
+        <topbar-item class="w-full h-[10%] px-1 my-2 flex items-center justify-center">
             <text-top-left class="theme2-texttopleft dark:theme3-texttopleft w-2/6 h-full font-bold text-5xl flex items-end" id="text-top-left-selector">
                 calc
             </text-top-left>
@@ -43,11 +43,11 @@
                 </div>
             </right>  
 
-        </topbar>
-        <screen class="w-full h-[20%] my-2">
+        </topbar-item>
+        <screen-display class="w-full h-[20%] my-2">
             <input type="text" class="theme2-screeninputSTYLE dark:theme3-screeninputSTYLE w-full h-full text-4xl rounded-lg text-right p-6 tracking-wider" id="screen-input-selector" value="" inputmode="none">
-        </screen>
-        <keypad id="keypad-selector" class="theme2-keypadStyle dark:theme3-keypadStyle h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
+        </screen-display>
+        <keypad-items id="keypad-selector" class="theme2-keypadStyle dark:theme3-keypadStyle h-[70%] max-h-[550px] w-full rounded-lg grid grid-cols-4 grid-rows-5 keypad-selector-responsive">
             <input class="button theme2-btn dark:theme3-btn" type="button" value="7" onclick="input('7')">
             <input class="button theme2-btn dark:theme3-btn" type="button" value="8" onclick="input('8')">    
             <input class="button theme2-btn dark:theme3-btn" type="button" value="9" onclick="input('9')">    
@@ -71,7 +71,7 @@
             <input class="big-button theme2-big-button dark:theme3-big-button" type="button" value="R" onclick="reset()">
             <input class="pt-[0.15rem] llg:pt-1 text-3xl button theme2-btn dark:theme3-btn" type="button" value="( )" onclick="bracket()" id="bracket">
             <input class="big-button big-button-equal theme2-big-red-button dark:theme3-big-red-button col-span-2" type="button" value="=" onclick="result()">
-        </keypad>
+        </keypad-items>
     </main>
 </body>
 </html>
