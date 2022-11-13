@@ -22,6 +22,8 @@
 - **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and does the needful
 - **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen.
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
+- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futeristic designs and features. [Click Here]() to Download.
+
   <br>
 
 ![](https://i.imgur.com/waxVImv.png)
@@ -31,6 +33,9 @@
 - [HTML5](https://html.com/)
 - [TailwindCSS <sub>v3.2.1</sub>](https://tailwindcss.com/)
 - [JavaScript ES6](http://es6-features.org/)
+- [JAVA](https://www.w3schools.com/java/)
+- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEHjgJKN52-G4gamQdXtqbXM1dZp6yQBg3IR9tocxBUfqro5Fwjy9uAaAtFsEALw_wcB&gclsrc=aw.ds)
 - [Sweet Alert <sub>v2.1.2</sub>](https://sweetalert.js.org/)
 - [Frontend Mentor-Design](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29)
 
