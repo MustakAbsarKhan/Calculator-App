@@ -1,4 +1,4 @@
-# Calculator- App V1.0
+# Calculator App V1.0
 
 [![npm version](https://badge.fury.io/js/tailwindcss.svg)](https://badge.fury.io/js/tailwindcss)
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/sweetalert/badge)](https://www.jsdelivr.com/package/npm/sweetalert)
@@ -22,7 +22,7 @@
 - **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and does the needful
 - **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen.
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console,` and an Invalid Input error will be displayed using **_Sweet Alert_**
-- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futuristic designs and features. [Click Here](https://raw.githubusercontent.com/MustakAbsarKhan/Calculator-App/main/APK%20File/
+- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futuristic designs and features. [Click Here](https://github.com/MustakAbsarKhan/Calculator-App/raw/main/APK%20File/Calculator_Dev_by_Mustak.apk)
 - **Works Offline** - Never worry about internet. After your first visit you'd **never require Internet Access** and you can use the app or web version freely.
 Calculator_Dev_by_Mustak.apk) to Download.
 
