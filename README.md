@@ -1,4 +1,4 @@
-# Calculator- App V1.0 (PWA)
+# Calculator- App V1.0
 
 [![npm version](https://badge.fury.io/js/tailwindcss.svg)](https://badge.fury.io/js/tailwindcss)
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/sweetalert/badge)](https://www.jsdelivr.com/package/npm/sweetalert)
@@ -7,7 +7,7 @@
 
 -> **[Live URL - Click Here](https://calc-mustak.netlify.app)** <br>
 
-**This is a `Smart Calculator` and a `Progressive Web App` With countless <i>Hidden Features</i> for making a simple calculator `Interesting` and `Smart`** <br>
+**This is a `Smart Calculator` and a `Smart Calculator App` With countless <i>Hidden Features</i> for making a simple calculator `Interesting` and `Smart`** <br>
 
 ## Features that make it comparatively more handy and efficacious
 
