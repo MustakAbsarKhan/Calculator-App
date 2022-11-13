@@ -22,7 +22,9 @@
 - **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and does the needful
 - **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen.
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console,` and an Invalid Input error will be displayed using **_Sweet Alert_**
-- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futuristic designs and features. [Click Here](https://raw.githubusercontent.com/MustakAbsarKhan/Calculator-App/main/APK%20File/Calculator_Dev_by_Mustak.apk) to Download.
+- **Mobile App** - This `Smart Calculator` has its Mobile/Tablet version with futuristic designs and features. [Click Here](https://raw.githubusercontent.com/MustakAbsarKhan/Calculator-App/main/APK%20File/
+- **Works Offline** - Never worry about internet. After your first visit you'd **never require Internet Access** and you can use the app or web version freely.
+Calculator_Dev_by_Mustak.apk) to Download.
 
   <br>
 
