@@ -1,4 +1,4 @@
-# Calculator- App V1.0
+# Calculator- App V1.0 (PWA)
 
 [![npm version](https://badge.fury.io/js/tailwindcss.svg)](https://badge.fury.io/js/tailwindcss)
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/sweetalert/badge)](https://www.jsdelivr.com/package/npm/sweetalert)
@@ -7,7 +7,7 @@
 
 -> **[Live URL - Click Here](https://calc-mustak.netlify.app)** <br>
 
-**This is `A Smart Calculator` App With countless <i>Hidden Features</i> for making a simple calculator `Interesting` and `Smart`** <br>
+**This is a `Smart Calculator` and a `Progressive Web App` With countless <i>Hidden Features</i> for making a simple calculator `Interesting` and `Smart`** <br>
 
 ## Features that make it comparatively more handy and efficacious
 
@@ -20,8 +20,7 @@
 - **Quick Reset** - Clicking Twice on any toggle button will instantly reset all the stored data
 - **No Double Trouble** - Back to Back similar problem causing inputs [`.,+,-,x,/`] will be filtered
 - **Smart Mathematical Operator Detection** - Smartly Detects if mathematical operator like `*` is missing and does the needful
-- **Device Keyboard Toggle** - **Double Tapping** on the calculator screen would **`Enable/Disable`** the built in direct device keyboard (**`Default: Disabled` Recommended**)
-- **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen [**`Selection`**] and pressing the **Calc Buttons** or direct **device keyboard [`Edit or Modification`]**. `[You Can Enable your device's numeric keyboard by double tapping the result screen of the Calc]`
+- **Flexible Edit** - Deletion or modification of any number at any position can be done by clicking on the desired position of the screen.
 - **Error Handling** - Any Detected Error will be caught and displayed in `Console` and Invalid Input error will be displayed using **_Sweet Alert_**
   <br>
 
